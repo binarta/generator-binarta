@@ -1,0 +1,44 @@
+def env = System.getProperty('env') ?: 'dev'
+
+task npmUpdate(type: Exec) {
+    commandLine 'npm', 'update'
+}
+
+task gulpBuild(type: Exec, dependsOn:['npmUpdate']) {
+    commandLine 'gulp', '--env', "$env"
+}
+
+task update(dependsOn:['gulpBuild']) << {
+}
+
+task merge(type: Copy) {
+    outputs.upToDateWhen { false }
+}
+
+task buildWeb(type: Sync, dependsOn: 'merge') {
+    from "$buildDir/dist"
+    into "$buildDir/upload/web"
+}
+
+task buildMail(type: Sync) {
+    from 'src/mail'
+    into "$buildDir/upload/mail"
+}
+
+task buildDefaultImages(type: Sync) {
+    from 'src/images'
+    into "$buildDir/upload/images"
+}
+
+tasks.build.dependsOn(buildWeb)
+tasks.build.dependsOn(buildMail)
+tasks.build.dependsOn(buildDefaultImages)
+
+task install(dependsOn:'build') << {
+    def template = file('src').parentFile.name
+    def type = file('src').parentFile.parentFile.name
+    def upload = file('build/upload').absolutePath
+    def proc  = ['aws', 's3', 'sync', upload, "s3://binarta.app.templates.$env/$type/$template", '--delete', '--acl=private', '--cache-control="max-age=0"'].execute()
+    proc.consumeProcessOutput(System.out, System.err)
+    proc.waitFor()
+}

@@ -1,0 +1,6 @@
+<pre>
+Van: \$replyTo (\$name)
+Onderwerp: \$subject
+
+\$message
+</pre>

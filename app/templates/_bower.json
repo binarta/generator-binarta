@@ -1,0 +1,40 @@
+{
+  "name": "<%= appname %>",
+  "dependencies": {
+    "binarta.basic.app.angular": "0.*.*",
+    "animate.css": "~3.2.0"
+  },
+  "resolutions": {
+    "angular": "1.3.*"
+  },
+  "overrides": {
+    "angular": {"ignore": true},
+    "angular-route": {"ignore": true},
+    "angular-sanitize": {"ignore": true},
+    "angular-resource": {"ignore": true},
+    "angular-cookies": {"ignore": true},
+    "angular-touch": {"ignore": true},
+    "angular-animate": {"ignore": true},
+    "jquery": {"ignore": true},
+    "pnotify": {
+      "main": [
+        "pnotify.core.js",
+        "pnotify.nonblock.js",
+        "pnotify.core.css"
+      ]
+    },
+    "jquery-file-upload": {
+      "dependencies": null,
+      "main": [
+        "js/vendor/jquery.ui.widget.js",
+        "js/jquery.fileupload.js"
+      ]
+    },
+    "angulartics": {
+      "main": [
+        "src/angulartics.js",
+        "src/angulartics-ga.js"
+      ]
+    }
+  }
+}
