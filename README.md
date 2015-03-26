@@ -1,4 +1,4 @@
-# generator-binarta [![Build Status](https://secure.travis-ci.org/jkerkhofs/generator-binarta.png?branch=master)](https://travis-ci.org/jkerkhofs/generator-binarta)
+# generator-binarta
 
 > [Yeoman](http://yeoman.io) generator
 

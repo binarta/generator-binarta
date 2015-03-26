@@ -1,7 +1,62 @@
 {
-  "pages":["/"],
+  "pages":["/", "/blog"],
   "msgs":{
     "default":{
+      "navigation.label.home":"home",
+      "navigation.label.blog":"blog",
+      "navigation.label.contact":"contact",
+      "navigation.label.conditions":"Algemene voorwaarden",
+
+      "contact.form.name":"Naam",
+      "contact.form.email":"Email",
+      "contact.form.subject":"Onderwerp",
+      "contact.form.message":"Boodschap",
+      "contact.form.send":"Verstuur bericht!",
+      "contact.address":"Mijn adres, nummer, 3000 Leuven",
+      "contact.phone":"012 34 56 78",
+
+      "button.view.older.articles": "Bekijk oudere artikelen",
+      "blog.read.more": "Lees meer...",
+      "blog.back": "terug naar overzicht",
+      "blog.article.add.new.button": "Nieuw artikel",
+      "blog.drafts.title": "Drafts",
+      "blog.article.draft.label": "DRAFT",
+      "blog.article.publish.button": "Publiceer",
+      "blog.article.unpublish.button": "Verbergen",
+      "blog.article.remove.button": "Verwijderen",
+      "blog.article.remove.confirm": "Ben je zeker dat je dit artikel wilt verwijderen?",
+      "blog.article.add.body.button": "Voeg hoofdtekst toe",
+      "blog.article.add.type.label": "Blogtype",
+      "blog.article.add.title.label": "Titel",
+      "blog.article.add.lead.label": "Inleiding",
+      "blog.article.add.body.label": "Hoofdtekst",
+      "blog.article.add.published.checkbox": "Gepubliceerd",
+      "blog.article.add.button": "Opslaan",
+      "blog.article.cancel.button": "Annuleren",
+      "blog.no.articles.found": "Geen artikelen gevonden...",
+      "blog.article.update.button": "Opslaan",
+      "blog.article.undo.button": "Ongedaan maken",
+
+      "configure.cookies.notice.message": "Gelieve je browser te configureren zodat cookies van derden worden geaccepteerd. Je kan meer lezen over ons cookie-beleid in onze <a href='#!{{localePrefix}}/conditions'>voorwaarden</a>.",
+      "cookie.notice.message": "Deze website gebruikt cookies. Door deze website te gebruiken zonder je instellingen te wijzigen ga je akkoord met onze <a href='#!{{localePrefix}}/conditions'>voorwaarden</a>.",
+      "cookie.notice.close.button": "sluiten",
+
+      "upload.image.contentLength.lowerbound": "De foto moet minimum 1kB groot zijn.",
+      "upload.image.contentLength.upperbound": "De foto mag maximum 10MB groot zijn.",
+      "upload.image.contentType.whitelist": "Ongeldige foto.",
+
+      "site.settings.title": "Site instellingen",
+      "site.settings.contact.settings.title": "Contact formulier",
+      "site.settings.analytics.title": "Analytics",
+      "config.application.email.label":"Ontvanger",
+      "config.application.email.info":"Naar dit e-mailadres zullen uw contactformulieren verstuurd worden.",
+      "config.sender.email.label":"Verzender",
+      "config.sender.email.info":"Dit e-mailadres krijgt de ontvanger te zien.<br>Je zal hierop een mail ontvangen ter goedkeuring. Enkel als je dit goedkeurd zal het contactformulier blijven werken.<br><small>Als je geen e-mail hebt ontvangen, kijk dan ook even in je spam-folder.<br>Bij problemen, klik op reset en contacteer ons.</small>",
+      "config.analytics.ga.key.label":"Google Analytics tracking code",
+      "config.analytics.ga.key.info":"Hier kan u de tracking code van uw Google Analytics account configureren. Deze moet het volgende formaat hebben: UA-NNNNNN-N. Meer informatie over Google Analytics kan u <a href='http://www.google.com/analytics/'>hier</a> vinden.",
+
+      "terms.and.conditions.title":"Algemene Voorwaarden (AV)",
+      "terms.and.conditions.body":"<h3>Goedkeuring en aanvaarding van termen</h3><p>Wij leveren deze website en de informatie op deze website, zijn offertes en facturen onderhevig aan deze Algemene voorwaarden ('AV'). Wij mogen deze AV wijzigen op eender welke tijdstip zonder enige voorafgaande kennisgeving. Vanaf het moment dat u zich registreert of een offerte of factuur aanvaard en elke keer u gebruik maakt van de producten of diensten van ons verklaart u kennis te hebben genomen van de laatste versie van de AV en verklaart u hiermee akkoord te gaan. Door u te registeren, een offerte of factuur te aanvaarden of door gebruik te maken van de producten en diensten van ons, gaat u akkoord met het gebruik, verzamelen en openbaring van uw persoonlijke gegevens in overeenstemming met ons Privacy beleid. ('PB'). en Cookie beleid (CB) Indien u niet akkoord gaat met alle voorwaarden vermeld in deze AV, PB en CB, mag u onze website, product of dienst op geen enkele manier gebruiken.</p><p>Je kan een kopie van onze AV opvragen via onze mailadres de PB en CB is verder toegelicht op deze pagina.</p><h3>Privacy Beleid (PB)</h3><p>Wij hechten belang aan uw privacy. Hoewel de meeste informatie op deze site beschikbaar is zonder dat er persoonlijke gegevens moeten worden verstrekt, is het mogelijk dat de gebruiker om persoonlijke informatie gevraagd wordt. Deze informatie zal enkel gebruikt worden intern binnen ons bedrijf (bv. ons klantenbeheer, ons portfolio, om u op de hoogte te houden van onze activiteiten, ...). De gebruiker kan zich, kosteloos en op verzoek, steeds verzetten tegen het gebruik van zijn gegevens voor direct marketing. Daartoe zal hij zich richten tot ons e-mailadres.</p><p>Conform de wet verwerking persoonsgegevens van 08/12/1992 beschikt de gebruiker over een wettelijk recht op inzage en eventuele correctie van zijn persoonsgegevens. Mits bewijs van identiteit (kopie identiteitskaart) kunt u via een schriftelijke, gedateerde en ondertekende aanvraag aan naam onderneming, adres, email adres, gratis de schriftelijke mededeling bekomen van uw persoonsgegevens. Indien nodig kunt u ook vragen de gegevens te corrigeren die onjuist, niet volledig of niet pertinent zouden zijn.</p><p>Wij kunnen anonieme of geaggregeerde gegevens verzamelen van niet-persoonlijke aard, zoals browser type of IP-adres, het besturingsprogramma dat u gebruikt of de domeinnaam van de website langs waar u naar de ...-website gekomen bent, of waarlangs u die verlaat. Dit maakt het ons mogelijk de ...-website permanent te optimaliseren voor de gebruikers.</p><h3>Cookie Beleid (CB)</h3><p>We gebruiken cookies om onze service te verbeteren. Sommige cookies zijn strikt noodzakelijk voor de werking van de website, andere dienen om de werking en jouw gebruikservaring te verbeteren.</p><p>Strikt noodzakelijke cookies worden gebruikt om:</p><ul><li>te onthouden wat er in je winkelmandje zit</li><li>te onthouden in welke fase van je bestelling je zit</li></ul><p>Functionele cookies worden gebruikt om:</p><ul><li>je logingegevens te onthouden</li><li>je verbinding met de website te beveiligen</li><li>te zorgen dat het uitzicht van de website consistent is</li></ul><p>Analytische cookies worden gebruikt om:</p><ul><li>de website krachtiger te doen presteren door de laadduur van de pagina's die je bezoekt te verminderen</li><li>de gebruikservaring te verbeteren</li></ul><p>Targeting cookies worden gebruikt om:</p><ul><li>je de mogelijkheid te geven dingen te delen en 'leuk te vinden' ('Like')</li></ul><h4>Voorbeelden van het gebruik van cookies</h4><p>We gebruiken cookies om onze service te verbeteren door bijvoorbeeld:</p><ul><li>de werking van specifieke diensten mogelijk te maken, zoals online betalen, dat niet mogelijk is zonder de cookies in kwestie</li><li>te zorgen dat je toestel herkend wordt, zodat je tijdens één opdracht niet verschillende keren dezelfde informatie hoeft te geven</li><li>vast te stellen dat je je gebruikersnaam en wachtwoord al ingegeven hebt bij het inloggen, zodat je dat niet opnieuw moet doen bij elke pagina die je bezoekt</li><li>te meten hoeveel mensen de onlinediensten gebruiken, zodat we het gebruiksgemak kunnen verbeteren en er voldoende capaciteit beschikbaar is om de diensten snel te doen verlopen</li><li>gegevens te analyseren om ons te helpen begrijpen hoe je de onlinediensten gebruikt, opdat we ze zouden kunnen verbeteren.</li></ul><p>Als je het gebruik van cookies niet toestaat, zullen sommige functies en pagina's niet werken zoals verwacht.</p><p>Zo zal je bijvoorbeeld de boodschappenlijstfunctie niet kunnen gebruiken.</p><p>Als je bestaande cookies op je computer wil verwijderen, kijk dan in de handleiding van je browser door op 'Help' te klikken in het menu van je browser.</p>"
     }
   }
 }

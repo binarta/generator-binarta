@@ -43,9 +43,12 @@
 </head>
 <body class="notifications" editmode="{{editing}}" checkpoint-permission-for="edit.mode" ng-class="{'clerk': permitted}">
 <clerk-menu settings="{messages: false}"></clerk-menu>
+<cookie-permission-granted></cookie-permission-granted>
 
 <!--[if (gt IE 9)|!(IE)]><!-->
+<ng-include src="'partials/header.html'"></ng-include>
 <div ng-view></div>
+<ng-include src="'partials/footer.html'"></ng-include>
 <!--<![endif]-->
 
 <noscript>

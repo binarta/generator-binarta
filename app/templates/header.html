@@ -1,0 +1,34 @@
+<div class="container">
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#!/"><%= appname %></a>
+      </div>
+      <div id="navbar" class="collapse navbar-collapse" ng-controller="NavCtrl">
+        <ul class="nav navbar-nav">
+          <li ng-class="{active: isActive('/')}" i18n code="<%= '${generators.i18n(\'navigation.label.home\')}' %>">
+            <a href="#!/" ng-click="collapse()" ng-bind="var"></a>
+          </li>
+          <li ng-class="{active: isActive('/blog')}" i18n code="<%= '${generators.i18n(\'navigation.label.blog\')}' %>">
+            <a href="#!/blog" ng-click="collapse()" ng-bind="var"></a>
+          </li>
+          <li ng-class="{active: isActive('/contact')}" i18n code="<%= '${generators.i18n(\'navigation.label.contact\')}' %>">
+            <a href="#!/contact" ng-click="collapse()" ng-bind="var"></a>
+          </li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li checkpoint-is-authenticated ng-hide="authenticated">
+            <a href="#!/signin" ng-click="collapse()"><i class="fa fa-user"></i> Login</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</div>

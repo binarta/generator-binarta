@@ -1,0 +1,12 @@
+<div class="container terms-and-conditions">
+    <div class="row">
+        <div class="col-sm-8 col-sm-offset-2">
+            <h2 class="title" i18n code="${generators.i18n('terms.and.conditions.title')}">{{var}}</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-8 col-sm-offset-2">
+            <p i18n code="${generators.i18n('terms.and.conditions.body')}" editor="full" ng-bind-html="var|trust"></p>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,139 @@
+<div checkpoint-is-authenticated>
+    <div class="container bin-site-settings" ng-if="authenticated">
+        <div class="row">
+            <div class="col-xs-12 col-sm-8 col-sm-offset-2">
+                <h1 class="page-header" i18n code="${generators.i18n('site.settings.title')}" read-only>
+                    {{var}}
+                </h1>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12 col-sm-8 col-sm-offset-2">
+                <ol class="breadcrumb">
+                    <li><a href="#!/">Home</a></li>
+                    <li class="inline active" i18n code="${generators.i18n('site.settings.title')}" read-only>{{var}}</li>
+                </ol>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12 col-sm-8 col-sm-offset-2">
+                <div class="panel panel-default">
+                    <div class="panel-heading" i18n code="${generators.i18n('site.settings.contact.settings.title')}">
+                        {{var}}
+                    </div>
+                    <div class="panel-body">
+                        <div class="row">
+                            <form name="form" ng-controller="binConfigController as bcc"
+                                  ng-init="bcc.init({key: 'application.email', scope: 'public'})"
+                                  ng-submit="bcc.submit(); form.$setPristine();">
+                                <div class="col-xs-12 col-md-8 col-md-offset-2">
+                                    <div class="form-group" ng-class="{'has-error': form.$invalid}">
+                                        <label i18n code="${generators.i18n('config.application.email.label')}" read-only
+                                               for="config-application-email">{{var}}</label>
+
+                                        <div class="input-group">
+                                            <input type="email" id="config-application-email" class="form-control"
+                                                   ng-model="config.value">
+                                        <span class="input-group-btn">
+                                            <button type="submit" class="btn btn-success"
+                                                    ng-disabled="working || form.$pristine || form.$invalid">
+                                                <span ng-show="!working"><i class="fa fa-check-circle fa-fw"></i></span>
+                                                <span ng-show="working"><i
+                                                        class="fa fa-spinner fa-spin fa-fw"></i></span>
+                                                Opslaan
+                                            </button>
+                                        </span>
+                                        </div>
+                                    <span class="help-block" i18n read-only
+                                          code="${generators.i18n('config.application.email.info')}">
+                                        <i class="fa fa-info-circle"></i> <span ng-bind-html="var"></span>
+                                    </span>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <form name="form" ng-controller="binConfigController as bcc"
+                                  ng-init="bcc.init({key: 'sender.email'})"
+                                  ng-submit="bcc.submit(); form.$setPristine();">
+                                <div class="col-xs-12 col-md-8 col-md-offset-2">
+                                    <div class="form-group" ng-class="{'has-error': form.$invalid}">
+                                        <label i18n code="${generators.i18n('config.sender.email.label')}" read-only
+                                               for="config-sender-email">{{var}}</label>
+
+                                        <div class="input-group">
+                                            <input type="email" id="config-sender-email" class="form-control"
+                                                   ng-model="config.value">
+                                        <span class="input-group-btn">
+                                            <button type="submit" class="btn btn-success"
+                                                    ng-disabled="working || form.$pristine || form.$invalid">
+                                                <span ng-show="!working"><i class="fa fa-check-circle fa-fw"></i></span>
+                                                <span ng-show="working"><i
+                                                        class="fa fa-spinner fa-spin fa-fw"></i></span>
+                                                Opslaan
+                                            </button>
+                                            <button type="button" class="btn btn-warning"
+                                                    ng-click="config.value = 'noreply@email.binarta.com'; bcc.submit();"
+                                                    ng-disabled="config.value == 'noreply@email.binarta.com'">
+                                                <i class="fa fa-refresh fa-fw"></i> Reset
+                                            </button>
+                                        </span>
+                                        </div>
+                                    <span class="help-block" i18n read-only
+                                          code="${generators.i18n('config.sender.email.info')}">
+                                        <i class="fa fa-info-circle"></i> <span ng-bind-html="var"></span>
+                                    </span>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <div bin-config-if="analytics" equals="true">
+                    <div class="panel panel-default">
+                        <div class="panel-heading" i18n code="${generators.i18n('site.settings.analytics.title')}" read-only>
+                            {{var}}
+                        </div>
+                        <div class="panel-body">
+                            <div class="row">
+                                <form name="form" ng-controller="binConfigController as bcc"
+                                      ng-init="bcc.init({key: 'analytics.ga.key', scope: 'public'})"
+                                      ng-submit="bcc.submit(); form.$setPristine();">
+                                    <div class="col-xs-12 col-md-8 col-md-offset-2">
+                                        <div class="form-group" ng-class="{'has-error': form.$invalid}">
+                                            <label i18n code="${generators.i18n('config.analytics.ga.key.label')}"
+                                                   read-only
+                                                   for="config-analytics-ga-key">{{var}}</label>
+
+                                            <div class="input-group">
+                                                <input type="text" id="config-analytics-ga-key" class="form-control"
+                                                       ng-model="config.value">
+                                        <span class="input-group-btn">
+                                            <button type="submit" class="btn btn-success"
+                                                    ng-disabled="working || form.$pristine || form.$invalid">
+                                                <span ng-show="!working"><i class="fa fa-check-circle fa-fw"></i></span>
+                                                <span ng-show="working"><i
+                                                        class="fa fa-spinner fa-spin fa-fw"></i></span>
+                                                Opslaan
+                                            </button>
+                                        </span>
+                                            </div>
+                                    <span class="help-block" i18n read-only
+                                          code="${generators.i18n('config.analytics.ga.key.info')}">
+                                        <i class="fa fa-info-circle"></i> <span ng-bind-html="var"></span>
+                                    </span>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
