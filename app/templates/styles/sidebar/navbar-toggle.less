@@ -1,0 +1,58 @@
+@media (max-width: @screen-xs-max) {
+  .navbar-app-top {
+    .navbar-toggle {
+      float: left;
+      margin-right: 0;
+      padding: 16px 30px 16px 0;
+      background: none;
+      border: none;
+      cursor: pointer;
+
+      &:hover,
+      &:focus {
+        background: none;
+      }
+
+      span,
+      span:before,
+      span:after {
+        content: '';
+        display: block;
+        position: absolute;
+        height: 3px;
+        width: 30px;
+        background: @navbar-inverse-color;
+        border-radius: 1px;
+        cursor: pointer;
+        transition: all 500ms ease-in-out;
+      }
+
+      span:before {
+        top: -8px;
+      }
+      span:after {
+        bottom: -8px;
+      }
+    }
+  }
+
+  body.sidebar-visible {
+    .navbar-app-top {
+      .navbar-toggle {
+        span {
+          background-color: transparent;
+        }
+        span:before,
+        span:after {
+          top: 0;
+        }
+        span:before {
+          transform: rotate(45deg);
+        }
+        span:after {
+          transform: rotate(-45deg);
+        }
+      }
+    }
+  }
+}

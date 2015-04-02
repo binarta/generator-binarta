@@ -77,8 +77,16 @@ function ScriptsTask() {
     .pipe(gulpif(options.env != 'dev', gulp.dest('build/dist/scripts')));
 }
 gulp.task('scripts', ['bower'], ScriptsTask);
-gulp.task('fast.scripts', ScriptsTask);
 gulp.task('clean.scripts', ['clean.bower'], ScriptsTask);
+gulp.task('fast.scripts', ScriptsTask);
+
+function CopyBootstrapVariablesTask() {
+  return gulp.src('src/web/styles/variables.less')
+    .pipe(gulp.dest('bower_components/bootstrap/less'));
+}
+gulp.task('copy.bootstrap.variables', ['bower'], CopyBootstrapVariablesTask);
+gulp.task('clean.copy.bootstrap.variables', ['clean.bower'], CopyBootstrapVariablesTask);
+gulp.task('dirty.copy.bootstrap.variables', CopyBootstrapVariablesTask);
 
 function StylesTask() {
   return gulp.src(mainBowerFiles().concat(context.sources))
@@ -92,10 +100,10 @@ function StylesTask() {
     .pipe(csso())
     .pipe(gulp.dest('build/dist/styles'));
 }
-gulp.task('styles', ['bower'], StylesTask);
-gulp.task('fast.styles', StylesTask);
-gulp.task('clean.styles', ['clean.bower'], StylesTask);
-gulp.task('dirty.styles', function () {
+gulp.task('styles', ['bower', 'copy.bootstrap.variables'], StylesTask);
+gulp.task('fast.styles', ['dirty.copy.bootstrap.variables'], StylesTask);
+gulp.task('clean.styles', ['clean.bower', 'clean.copy.bootstrap.variables'], StylesTask);
+gulp.task('dirty.styles', ['dirty.copy.bootstrap.variables'], function () {
   return StylesTask().pipe(livereload());
 });
 
@@ -132,9 +140,16 @@ gulp.task('templates', ['compile.web.templates']);
 gulp.task('clean.templates', ['clean.compile.web.templates']);
 gulp.task('livereload.templates', ['livereload.compile.web.templates']);
 
-gulp.task('build', ['sources', 'templates', 'scripts', 'styles']);
+function CopyBootstrapFontsTask() {
+  return gulp.src('bower_components/bootstrap/fonts/*')
+    .pipe(gulp.dest('build/dist/fonts'));
+}
+gulp.task('copy.bootstrap.fonts', ['bower'], CopyBootstrapFontsTask);
+gulp.task('clean.copy.bootstrap.fonts', ['clean.bower'], CopyBootstrapFontsTask);
+
+gulp.task('build', ['sources', 'templates', 'scripts', 'styles', 'copy.bootstrap.fonts']);
 gulp.task('fast.build', ['sources', 'templates', 'fast.scripts', 'fast.styles']);
-gulp.task('clean.build', ['clean.sources', 'clean.templates', 'clean.scripts', 'clean.styles']);
+gulp.task('clean.build', ['clean.sources', 'clean.templates', 'clean.scripts', 'clean.styles', 'clean.copy.bootstrap.fonts']);
 
 gulp.task('default', ['clean.build']);
 
@@ -152,11 +167,13 @@ gulp.task('dirty.deploy', ['livereload.templates'], DeployTask);
 gulp.task('fast.deploy', ['fast.build'], DeployTask);
 gulp.task('deploy', ['clean.build'], DeployTask);
 
-gulp.task('watch', ['deploy'], function () {
+function WatchTask() {
   livereload.listen();
 
   gulp.watch('src/web/**/*.less', ['dirty.styles']);
   gulp.watch(src.patterns.watch, ['livereload.sources']);
   gulp.watch(['src/web/**/*.template', 'src/web/**/*.html', 'user-config.json'], ['dirty.deploy']);
   gulp.watch(['config.json'], ['clean.scripts']);
-});
+}
+gulp.task('watch', ['deploy'], WatchTask);
+gulp.task('fast.watch', ['fast.deploy'], WatchTask);

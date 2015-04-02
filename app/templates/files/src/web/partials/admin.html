@@ -8,14 +8,58 @@
             </div>
         </div>
 
-        <div class="row">
-            <div class="col-xs-12 col-sm-8 col-sm-offset-2">
-                <ol class="breadcrumb">
-                    <li><a href="#!/">Home</a></li>
-                    <li class="inline active" i18n code="${generators.i18n('site.settings.title')}" read-only>{{var}}</li>
-                </ol>
+
+
+
+
+      <div class="row">
+        <div class="col-xs-12 col-sm-8 col-sm-offset-2">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              Features
             </div>
+            <div class="panel-body">
+              <div class="row">
+                <form name="form" ng-controller="binConfigController as bcc"
+                      ng-init="bcc.init({key: 'blog.enabled', scope: 'public'})"
+                      ng-submit="bcc.submit(); form.$setPristine();">
+                  <div class="col-xs-12 col-md-8 col-md-offset-2">
+                    <div class="form-group" ng-class="{'has-error': form.$invalid}">
+                      <label>Toon de blog</label>
+
+                      <div class="checkbox-switch" ng-show="config.value">
+                        <input id="blog-enabled-switch" class="cmn-toggle cmn-toggle-round" type="checkbox" ng-model="config.value"
+                               ng-true-value="'true'" ng-false-value="'false'" ng-change="bcc.submit()">
+                        <label for="blog-enabled-switch"></label>
+                      </div>
+
+                      <!--<div class="input-group">-->
+                        <!--<input type="checkbox" class="form-control" ng-model="config.value" ng-true-value="'true'" ng-false-value="'false'">-->
+                      <!--<span class="input-group-btn">-->
+                          <!--<button type="submit" class="btn btn-success"-->
+                                  <!--ng-disabled="working || form.$pristine || form.$invalid">-->
+                            <!--<span ng-show="!working"><i class="fa fa-check-circle fa-fw"></i></span>-->
+                              <!--<span ng-show="working"><i-->
+                                <!--class="fa fa-spinner fa-spin fa-fw"></i></span>-->
+                            <!--Opslaan-->
+                          <!--</button>-->
+                      <!--</span>-->
+                      <!--</div>-->
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
+
+
+
+
+
+
+
 
         <div class="row">
             <div class="col-xs-12 col-sm-8 col-sm-offset-2">

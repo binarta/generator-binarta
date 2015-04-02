@@ -23,10 +23,16 @@ module.exports = yeoman.generators.Base.extend({
       name: 'name',
       message: 'Your project name',
       default: this.appname
+    }, {
+      type: 'confirm',
+      name: 'sidebar',
+      message: 'Would you like to use a mobile sidebar menu?',
+      default: true
     }];
 
     this.prompt(prompts, function (props) {
       this.appname = props.name;
+      this.useSidebar = props.sidebar;
 
       done();
     }.bind(this));
@@ -66,7 +72,7 @@ module.exports = yeoman.generators.Base.extend({
       this.fs.copyTpl(
         this.templatePath('app.js'),
         this.destinationPath('src/web/scripts/app.js'),
-        {appname: this.appname})
+        {appname: this.appname, useSidebar: this.useSidebar})
       ;
       this.fs.copyTpl(
         this.templatePath('config.js.template'),
@@ -76,17 +82,53 @@ module.exports = yeoman.generators.Base.extend({
       this.fs.copyTpl(
         this.templatePath('index.html.template'),
         this.destinationPath('src/web/index.html.template'),
-        {appname: this.appname}
+        {appname: this.appname, useSidebar: this.useSidebar}
       );
-      this.fs.copyTpl(
-        this.templatePath('header.html'),
-        this.destinationPath('src/web/partials/header.html'),
-        {appname: this.appname}
-      );
+      if(this.useSidebar) {
+        this.fs.copyTpl(
+          this.templatePath('header-sidebar.html'),
+          this.destinationPath('src/web/partials/header.html'),
+          {appname: this.appname}
+        );
+        this.fs.copyTpl(
+          this.templatePath('sidebar/sidebar.html'),
+          this.destinationPath('src/web/partials/nav/sidebar.html'),
+          {appname: this.appname}
+        );
+        this.fs.copy(
+          this.templatePath('sidebar/menu.html'),
+          this.destinationPath('src/web/partials/nav/menu.html')
+        );
+        this.fs.copy(
+          this.templatePath('styles/sidebar/navbar-toggle.less'),
+          this.destinationPath('src/web/styles/navbar-toggle.less')
+        );
+      } else {
+        this.fs.copyTpl(
+          this.templatePath('header-default.html'),
+          this.destinationPath('src/web/partials/header.html'),
+          {appname: this.appname}
+        );
+      }
       this.fs.copyTpl(
         this.templatePath('footer.html'),
         this.destinationPath('src/web/partials/footer.html'),
         {appname: this.appname}
+      );
+      this.fs.copyTpl(
+        this.templatePath('styles/main.less'),
+        this.destinationPath('src/web/styles/main.less'),
+        {useSidebar: this.useSidebar}
+      );
+      this.fs.copyTpl(
+        this.templatePath('styles/nav.less'),
+        this.destinationPath('src/web/styles/nav.less'),
+        {useSidebar: this.useSidebar}
+      );
+      this.fs.copyTpl(
+        this.templatePath('styles/combined.less'),
+        this.destinationPath('src/web/styles/combined.less'),
+        {useSidebar: this.useSidebar}
       );
     }
   },

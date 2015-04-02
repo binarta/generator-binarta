@@ -1,2 +1,24 @@
-<ng-include src="'bin-blog-drafts.html'"></ng-include>
-<ng-include src="'bin-blog-previews.html'"></ng-include>
+<div class="container" ng-if="!blogEnabled && hasEditModePermission">
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="alert alert-info">
+        <form name="form" ng-controller="binConfigController as bcc"
+              ng-init="bcc.init({key: 'blog.enabled', scope: 'public'})">
+          <p>
+            De blog wordt momenteel niet aan de bezoekers getoond.
+            <a href="#!/blog" ng-click="config.value = 'true'; bcc.submit();">Schakel de blog in</a>.
+          </p>
+          <small>
+            <i class="fa fa-info-circle fa-fw"></i> Je kan de blog ook steeds in- of uitschakelen via de
+            <a href="#!/admin">instellingen pagina</a>.
+          </small>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div ng-if="blogEnabled || hasEditModePermission">
+  <ng-include src="'bin-blog-drafts.html'"></ng-include>
+  <ng-include src="'bin-blog-previews.html'"></ng-include>
+</div>

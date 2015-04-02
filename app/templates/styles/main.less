@@ -1,0 +1,40 @@
+<% if (useSidebar) { %>
+@media (max-width: @screen-xs-max) {
+  html, body {
+    overflow-x: hidden;
+  }
+
+  .main-container-wrapper {
+    transform: translate3d(0, 0, 0);
+    transition: transform 0.5s ease-in-out;
+  }
+
+  body.sidebar-visible {
+    .main-container-wrapper {
+      transform: translate3d(250px, 0, 0);
+      transition: transform 0.5s ease-in-out;
+
+      .main-container {
+        &:before {
+          content: '';
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          z-index: 1;
+        }
+      }
+    }
+  }
+}
+<% } else { %>
+.navbar {
+ margin-bottom: 20px;
+ margin-top: 20px;
+}
+<% } %>
+.starter-template {
+ padding: 15px;
+ text-align: center;
+}
