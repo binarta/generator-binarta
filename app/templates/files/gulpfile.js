@@ -127,7 +127,12 @@ function CompileWebTemplatesTask() {
   return gulp.src('src/web/**/*.html')
     .pipe(data(context))
     .pipe(template())
-    .pipe(minifyHTML())
+    .pipe(minifyHTML({
+      conditionals: true,
+      spare:true,
+      empty: true,
+      quotes: true
+    }))
     .pipe(gulp.dest('build/dist'));
 }
 gulp.task('compile.web.templates', CompileWebTemplatesTask);
@@ -160,7 +165,12 @@ function DeployTask() {
     .pipe(rename(function (path) {
       path.extname = '';
     }))
-    .pipe(minifyHTML())
+    .pipe(minifyHTML({
+      conditionals: true,
+      spare:true,
+      empty: true,
+      quotes: true
+    }))
     .pipe(gulp.dest('build/dist'));
 }
 gulp.task('dirty.deploy', ['livereload.templates'], DeployTask);
