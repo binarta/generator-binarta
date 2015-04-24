@@ -4,12 +4,7 @@
   "description": "Yeoman generator",
   "license": "MIT",
   "main": "app/index.js",
-  "repository": "jkerkhofs/generator-binarta",
-  "author": {
-    "name": "Jo Kerkhofs",
-    "email": "jke@thinkerit.be",
-    "url": "https://github.com/jkerkhofs"
-  },
+  "repository": "binarta/generator-binarta",
   "engines": {
     "node": ">=0.10.0"
   },
