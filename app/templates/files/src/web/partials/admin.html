@@ -2,7 +2,7 @@
     <div class="container bin-site-settings" ng-if="authenticated">
         <div class="row">
             <div class="col-xs-12 col-sm-8 col-sm-offset-2">
-                <h1 class="page-header" i18n code="${generators.i18n('site.settings.title')}" read-only>
+                <h1 class="page-header" i18n code="site.settings.title" read-only>
                     {{var}}
                 </h1>
             </div>
@@ -64,7 +64,7 @@
         <div class="row">
             <div class="col-xs-12 col-sm-8 col-sm-offset-2">
                 <div class="panel panel-default">
-                    <div class="panel-heading" i18n code="${generators.i18n('site.settings.contact.settings.title')}">
+                    <div class="panel-heading" i18n code="site.settings.contact.settings.title">
                         {{var}}
                     </div>
                     <div class="panel-body">
@@ -74,7 +74,7 @@
                                   ng-submit="bcc.submit(); form.$setPristine();">
                                 <div class="col-xs-12 col-md-8 col-md-offset-2">
                                     <div class="form-group" ng-class="{'has-error': form.$invalid}">
-                                        <label i18n code="${generators.i18n('config.application.email.label')}" read-only
+                                        <label i18n code="config.application.email.label" read-only
                                                for="config-application-email">{{var}}</label>
 
                                         <div class="input-group">
@@ -91,7 +91,7 @@
                                         </span>
                                         </div>
                                     <span class="help-block" i18n read-only
-                                          code="${generators.i18n('config.application.email.info')}">
+                                          code="config.application.email.info">
                                         <i class="fa fa-info-circle"></i> <span ng-bind-html="var"></span>
                                     </span>
                                     </div>
@@ -105,7 +105,7 @@
                                   ng-submit="bcc.submit(); form.$setPristine();">
                                 <div class="col-xs-12 col-md-8 col-md-offset-2">
                                     <div class="form-group" ng-class="{'has-error': form.$invalid}">
-                                        <label i18n code="${generators.i18n('config.sender.email.label')}" read-only
+                                        <label i18n code="config.sender.email.label" read-only
                                                for="config-sender-email">{{var}}</label>
 
                                         <div class="input-group">
@@ -127,7 +127,7 @@
                                         </span>
                                         </div>
                                     <span class="help-block" i18n read-only
-                                          code="${generators.i18n('config.sender.email.info')}">
+                                          code="config.sender.email.info">
                                         <i class="fa fa-info-circle"></i> <span ng-bind-html="var"></span>
                                     </span>
                                     </div>
@@ -139,7 +139,7 @@
 
                 <div bin-config-if="analytics" equals="true">
                     <div class="panel panel-default">
-                        <div class="panel-heading" i18n code="${generators.i18n('site.settings.analytics.title')}" read-only>
+                        <div class="panel-heading" i18n code="site.settings.analytics.title" read-only>
                             {{var}}
                         </div>
                         <div class="panel-body">
@@ -149,7 +149,7 @@
                                       ng-submit="bcc.submit(); form.$setPristine();">
                                     <div class="col-xs-12 col-md-8 col-md-offset-2">
                                         <div class="form-group" ng-class="{'has-error': form.$invalid}">
-                                            <label i18n code="${generators.i18n('config.analytics.ga.key.label')}"
+                                            <label i18n code="config.analytics.ga.key.label"
                                                    read-only
                                                    for="config-analytics-ga-key">{{var}}</label>
 
@@ -167,7 +167,7 @@
                                         </span>
                                             </div>
                                     <span class="help-block" i18n read-only
-                                          code="${generators.i18n('config.analytics.ga.key.info')}">
+                                          code="config.analytics.ga.key.info">
                                         <i class="fa fa-info-circle"></i> <span ng-bind-html="var"></span>
                                     </span>
                                         </div>

@@ -1,13 +1,13 @@
 <div id="navbar" ng-controller="NavCtrl">
   <ul class="nav navbar-nav">
     <li ng-class="{active: isActive('/')}">
-      <a href="#!/" i18n code="${generators.i18n('navigation.label.home')}" ng-bind="var"></a>
+      <a href="#!/" i18n code="navigation.label.home" ng-bind="var"></a>
     </li>
     <li ng-class="{active: isActive('/blog'), disabled: !blogEnabled}" ng-if="hasEditModePermission || blogEnabled">
-      <a href="#!/blog" i18n code="${generators.i18n('navigation.label.blog')}" ng-bind="var"></a>
+      <a href="#!/blog" i18n code="navigation.label.blog" ng-bind="var"></a>
     </li>
     <li ng-class="{active: isActive('/contact')}">
-      <a href="#!/contact" i18n code="${generators.i18n('navigation.label.contact')}" ng-bind="var"></a>
+      <a href="#!/contact" i18n code="navigation.label.contact" ng-bind="var"></a>
     </li>
   </ul>
 

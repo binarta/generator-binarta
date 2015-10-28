@@ -70,18 +70,28 @@ module.exports = yeoman.generators.Base.extend({
         {appname: this.appname}
       );
       this.fs.copyTpl(
+        this.templatePath('_config.json'),
+        this.destinationPath('config.json'),
+        {appname: this.appname}
+      );
+      this.fs.copyTpl(
+        this.templatePath('build.gradle'),
+        this.destinationPath('build.gradle'),
+        {appname: this.appname}
+      );
+      this.fs.copyTpl(
         this.templatePath('app.js'),
         this.destinationPath('src/web/scripts/app.js'),
         {appname: this.appname, useSidebar: this.useSidebar})
       ;
       this.fs.copyTpl(
-        this.templatePath('config.js.template'),
-        this.destinationPath('src/web/scripts/config.js.template'),
+        this.templatePath('config.js.template.template'),
+        this.destinationPath('src/web/scripts/config.js.template.template'),
         {appname: this.appname}
       );
       this.fs.copyTpl(
-        this.templatePath('index.html.template'),
-        this.destinationPath('src/web/index.html.template'),
+        this.templatePath('index.html.template.template'),
+        this.destinationPath('src/web/index.html.template.template'),
         {appname: this.appname, useSidebar: this.useSidebar}
       );
       if(this.useSidebar) {

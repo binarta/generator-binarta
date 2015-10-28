@@ -14,13 +14,13 @@
       <div id="navbar" class="collapse navbar-collapse" ng-controller="NavCtrl">
         <ul class="nav navbar-nav">
           <li ng-class="{active: isActive('/')}">
-            <a href="#!/" ng-click="collapse()" i18n code="<%= '${generators.i18n(\'navigation.label.home\')}' %>" ng-bind="var"></a>
+            <a href="#!/" ng-click="collapse()" i18n code="navigation.label.home" ng-bind="var"></a>
           </li>
           <li ng-class="{active: isActive('/blog'), disabled: !blogEnabled}" ng-if="hasEditModePermission || blogEnabled">
-            <a href="#!/blog" ng-click="collapse()" i18n code="<%= '${generators.i18n(\'navigation.label.blog\')}' %>" ng-bind="var"></a>
+            <a href="#!/blog" ng-click="collapse()" i18n code="navigation.label.blog" ng-bind="var"></a>
           </li>
           <li ng-class="{active: isActive('/contact')}">
-            <a href="#!/contact" ng-click="collapse()" i18n code="<%= '${generators.i18n(\'navigation.label.contact\')}' %>" ng-bind="var"></a>
+            <a href="#!/contact" ng-click="collapse()" i18n code="navigation.label.contact" ng-bind="var"></a>
           </li>
         </ul>
         <ul class="nav navbar-nav navbar-right">

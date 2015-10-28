@@ -1,6 +1,7 @@
 <pre>
-Van: \$replyTo (\$name)
-Onderwerp: \$subject
+${'<% if(name) { %>'}\${i18n(key:'contact.us.mail.name.label')} \$name${'<% } %>'}
+\${i18n(key:'contact.us.mail.email.label')} \$replyTo
+${'<% if(subject) { %>'}\${i18n(key:'contact.us.mail.subject.label')} \$subject${'<% } %>'}
 
 \$message
 </pre>

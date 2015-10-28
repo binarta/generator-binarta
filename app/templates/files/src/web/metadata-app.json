@@ -1,0 +1,31 @@
+{
+  "msgs":{
+    "en":{
+      "navigation.label.home":"home",
+      "navigation.label.blog":"blog",
+      "navigation.label.contact":"contact",
+      "navigation.label.conditions":"Algemene voorwaarden",
+
+      "contact.form.name":"Naam",
+      "contact.form.email":"Email",
+      "contact.form.subject":"Onderwerp",
+      "contact.form.message":"Boodschap",
+      "contact.form.send":"Verstuur bericht!",
+      "contact.address":"Mijn adres, nummer, 3000 Leuven",
+      "contact.phone":"012 34 56 78",
+
+      "site.settings.title": "Site instellingen",
+      "site.settings.contact.settings.title": "Contact formulier",
+      "site.settings.analytics.title": "Analytics",
+      "config.application.email.label":"Ontvanger",
+      "config.application.email.info":"Naar dit e-mailadres zullen uw contactformulieren verstuurd worden.",
+      "config.sender.email.label":"Verzender",
+      "config.sender.email.info":"Dit e-mailadres krijgt de ontvanger te zien.<br>Je zal hierop een mail ontvangen ter goedkeuring. Enkel als je dit goedkeurt zal het contactformulier blijven werken.<br><small>Als je geen e-mail hebt ontvangen, kijk dan ook even in je spam-folder.<br>Bij problemen, klik op reset en contacteer ons.</small>",
+      "config.analytics.ga.key.label":"Google Analytics tracking code",
+      "config.analytics.ga.key.info":"Hier kan u de tracking code van uw Google Analytics account configureren. Deze moet het volgende formaat hebben: UA-NNNNNN-N. Meer informatie over Google Analytics kan u <a href='http://www.google.com/analytics/'>hier</a> vinden.",
+
+      "terms.and.conditions.title":"Algemene Voorwaarden (AV)",
+      "terms.and.conditions.body":"Voor onze algemene voorwaarden, gelieve ons te <a href='#!/contact'>contacteren</a>."
+    }
+  }
+}
