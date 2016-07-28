@@ -1,60 +1,30 @@
-apply plugin:'groovy'
-
-def env = System.getProperty('env') ?: 'dev'
-def blog = System.getProperty('blog') ?: false
-def catalog = System.getProperty('catalog') ?: false
-def shop = System.getProperty('shop') ?: false
-def type = System.getProperty('type') ?: 'basic'
-
-task npmUpdate(type: Exec) {
-    commandLine 'npm', 'update'
+buildscript {
+    repositories {
+        def nexus = {repo->
+            maven {
+                credentials {
+                    username = NEXUS_USER
+                    password = NEXUS_PASS
+                }
+                url repo
+            }
+        }
+        nexus "http://nexus.thinkerit.be/content/repositories/repositories/"
+        nexus "http://nexus.thinkerit.be/content/repositories/snapshots/"
+        nexus "http://nexus.thinkerit.be/content/groups/public"
+    }
+    dependencies {
+        classpath 'thinkerit.gradle:binarta-template-plugin:[0,)'
+    }
 }
 
-task gulpBuild(type: Exec, dependsOn:['npmUpdate']) {
-    def args = ['gulp', '--env', env]
-    if (blog) args << '--blog'
-    if (catalog) args << '--catalog'
-    if (shop) args << '--shop'
-    commandLine args
+apply plugin: 'binarta-template'
+
+def getReleaseBuild() {
+    System.getenv('BUILD_NUMBER')
 }
+version = releaseBuild ?: '0-SNAPSHOT'
 
-task gulpCompileWeb(type: Exec) {
-    def args = ['gulp', 'compile.web.templates', '--env', env]
-    if (blog) args << '--blog'
-    if (catalog) args << '--catalog'
-    if (shop) args << '--shop'
-    commandLine args
-}
-
-task update(dependsOn:['gulpBuild']) << {
-}
-
-task merge(type: Copy) {
-    outputs.upToDateWhen { false }
-}
-
-task buildWeb(type: Sync, dependsOn: 'merge') {
-    from "$buildDir/dist"
-    into "$buildDir/upload/web"
-}
-
-task buildMail(type: Sync, dependsOn: 'merge') {
-    from "$buildDir/mail"
-    into "$buildDir/upload/mail"
-}
-
-task buildDefaultImages(type: Sync) {
-    from 'src/images'
-    into "$buildDir/upload/images"
-}
-
-tasks.build.dependsOn(buildWeb)
-tasks.build.dependsOn(buildMail)
-tasks.build.dependsOn(buildDefaultImages)
-
-task install(dependsOn:'build') << {
-    def upload = file('build/upload').absolutePath
-    def proc  = ['aws', 's3', 'sync', upload, "s3://binarta.app.templates.$env/$type/<%= appname %>", '--delete', '--acl=private', '--cache-control="max-age=0"'].execute()
-    proc.consumeProcessOutput(System.out, System.err)
-    proc.waitFor()
+template {
+    name = '<%= namespace %>'
 }

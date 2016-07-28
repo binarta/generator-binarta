@@ -1,75 +1,26 @@
-angular.module('<%= appname %>')
+angular.module('<%= namespace %>')
     .config(['configProvider', function (configProvider) {
         configProvider.add({
-            namespace:'<%print('\<%print(\'${namespace}\')%\>')%>',
+            namespace:'<%%print('${namespace}')%>',
             image:{cache:true},
             autoUpload: true,
-            awsPath:'<%print('\<%print(\'${cdnUrl}\')%\>')%>',
-            baseUri:'<%print('\<%print(\'${binartaUrl}\')%\>')%>',
-            socketUri: '<%print('\<%print(\'${socketUrl}\')%\>')%>',
-            binartaBaseUri: '<%print("${binartaBaseUri}")%>',
+            awsPath:'<%%print('${cdnUrl}')%>',
+            baseUri:'<%%print('${binartaUrl}')%>',
+            socketUri: '<%%print('${socketUrl}')%>',
+            binartaBaseUri: '${binartaBaseUri}',
             styling: 'bootstrap3',
             cookiesBinartaRedirect:false,
             cookiesAutoGrantPermission:true,
-            analytics: <%print('\<%print(\'${analytics}\')%\>')%>,
-            intercomAppId: '<%print("${intercomAppId}")%>',
-            inspectletSiteId: '<%print("${inspectletSiteId}")%>',
+            analytics: '<%%print('${analytics}')%>',
+            sharedAnalytics: '${sharedAnalytics}',
+            intercomAppId: '${intercomAppId}',
+            inspectletSiteId: '${inspectletSiteId}',
             useDefaultAsMainLocale: true,
             defaultLocaleFromMetadata: 'en',
-            blogEnabled:<%print("${blog}")%>,
-            catalogEnabled:<%print("${catalog}")%>,
-            languages:[
-                {code:'sq', name:'Albanian'},
-                {code:'ar', name:'Arabic'},
-                {code:'be', name:'Belarusian'},
-                {code:'bg', name:'Bulgarian'},
-                {code:'ca', name:'Catalan'},
-                {code:'zh', name:'Chinese'},
-                {code:'hr', name:'Croatian'},
-                {code:'cs', name:'Czech'},
-                {code:'da', name:'Danish'},
-                {code:'nl', name:'Dutch'},
-                {code:'en', name:'English'},
-                {code:'et', name:'Estonian'},
-                {code:'fi', name:'Finnish'},
-                {code:'fr', name:'French'},
-                {code:'de', name:'German'},
-                {code:'el', name:'Greek'},
-                {code:'iw', name:'Hebrew'},
-                {code:'hi', name:'Hindi'},
-                {code:'hu', name:'Hungarian'},
-                {code:'is', name:'Icelandic'},
-                {code:'in', name:'Indonesian'},
-                {code:'ga', name:'Irish'},
-                {code:'it', name:'Italian'},
-                {code:'ja', name:'Japanese'},
-                {code:'ko', name:'Korean'},
-                {code:'lv', name:'Latvian'},
-                {code:'lt', name:'Lithuanian'},
-                {code:'mk', name:'Macedonian'},
-                {code:'ms', name:'Malay'},
-                {code:'mt', name:'Maltese'},
-                {code:'no', name:'Norwegian'},
-                {code:'pl', name:'Polish'},
-                {code:'pt', name:'Portuguese'},
-                {code:'ro', name:'Romanian'},
-                {code:'ru', name:'Russian'},
-                {code:'sr', name:'Serbian'},
-                {code:'sk', name:'Slovak'},
-                {code:'sl', name:'Slovenian'},
-                {code:'es', name:'Spanish'},
-                {code:'sv', name:'Swedish'},
-                {code:'th', name:'Thai'},
-                {code:'tr', name:'Turkish'},
-                {code:'uk', name:'Ukrainian'},
-                {code:'vi', name:'Vietnamese'}
-            ]
-            <%= "\<% if(catalog) { %\>" %>
-            ,countries:<%print("${countries}")%>
-            ,euVatRates:<%print("${euVatRates}")%>
-            <%= "\<% } %\>" %>
+            languages: ${languages}
+            <%% if(catalog) { %>
+            ,countries: ${countries}
+            ,euVatRates: ${euVatRates}
+            <%% } %>
         });
-    }])
-    .config(['<%= "\<%print(\"${'$'}\")%\>" %>compileProvider', function (cp) {
-        cp.debugInfoEnabled(<%= "\<%print(debugInfoEnabled)%\>" %>);
     }]);

@@ -1,5 +1,8 @@
+**/.idea
+*.iml
+**/*DS_Store*
+build
 node_modules
-dist
-.tmp
 bower_components
-test/bower_components
+user-config.json
+bower.json

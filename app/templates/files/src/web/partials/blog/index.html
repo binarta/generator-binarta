@@ -1,24 +1,26 @@
-<div class="container" ng-if="!blogEnabled && hasEditModePermission">
-  <div class="row">
-    <div class="col-xs-12">
-      <div class="alert alert-info">
-        <form name="form" ng-controller="binConfigController as bcc"
-              ng-init="bcc.init({key: 'blog.enabled', scope: 'public'})">
-          <p>
-            De blog wordt momenteel niet aan de bezoekers getoond.
-            <a href="#!/blog" ng-click="config.value = 'true'; bcc.submit();">Schakel de blog in</a>.
-          </p>
-          <small>
-            <i class="fa fa-info-circle fa-fw"></i> Je kan de blog ook steeds in- of uitschakelen via de
-            <a href="#!/admin">instellingen pagina</a>.
-          </small>
-        </form>
+<div class="container">
+  <bin-blog>
+    <div class="row">
+      <div class="col-xs-12 col-sm-8 col-sm-offset-2">
+        <bin-blog-drafts></bin-blog-drafts>
       </div>
     </div>
-  </div>
-</div>
 
-<div ng-if="blogEnabled || hasEditModePermission">
-  <ng-include src="'bin-blog-drafts.html'"></ng-include>
-  <ng-include src="'bin-blog-previews.html'"></ng-include>
+    <bin-blog-previews>
+      <div class="row">
+        <div class="col-xs-12 col-sm-8 col-sm-offset-2">
+          <bin-blog-add-article-button></bin-blog-add-article-button>
+        </div>
+      </div>
+
+      <ng-include src="'bin-blog-previews.html'"></ng-include>
+
+      <div class="row">
+        <div class="col-xs-12 col-sm-8"
+             ng-class="searchCtrl.results.length > 0 ? 'col-sm-offset-4' : 'col-sm-offset-2'">
+            <ng-include src="'search-for-more.html'"></ng-include>
+        </div>
+      </div>
+    </bin-blog-previews>
+  </bin-blog>
 </div>

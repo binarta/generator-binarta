@@ -1,5 +1,5 @@
 {
-  "name": "<%= appname %>",
+  "name": "<%= namespace %>",
   "devDependencies": {
     "gulp": "^3.8.10",
     "gulp-binarta-template": "0.*.*"

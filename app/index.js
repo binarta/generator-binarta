@@ -3,149 +3,79 @@ var yeoman = require('yeoman-generator');
 var chalk = require('chalk');
 var yosay = require('yosay');
 
-module.exports = yeoman.generators.Base.extend({
+module.exports = yeoman.Base.extend({
   initializing: function () {
     this.pkg = require('../package.json');
   },
 
   prompting: function () {
-    var done = this.async();
-
-    // Have Yeoman greet the user.
     this.log(yosay(
-      'Welcome to the sensational ' + chalk.red('Binarta') + ' generator!'
+      'Welcome to the ' + chalk.blue.bold('Binarta') + ' app generator!'
     ));
 
-    this.appname = this._.slugify(this.appname);
+    this.log('To get started, make sure you have a Binarta namespace.\n\n' +
+      'You can easily create your own namespace by going to "https://binarta.com/template-selection".\n\n' +
+      'Choose a design (doesn\'t matter which one) and choose a name for your application.\n' +
+      'When finished, you\'ll see the namespace in the url of your newly created application, ' +
+      'e.g. http://' + chalk.blue.bold('my-namespace') + '.app.binarta.com.\n\n');
 
     var prompts = [{
       type: 'input',
-      name: 'name',
-      message: 'Your project name',
-      default: this.appname
+      name: 'namespace',
+      message: 'What is your Binarta namespace?'
     }, {
-      type: 'confirm',
-      name: 'sidebar',
-      message: 'Would you like to use a mobile sidebar menu?',
-      default: true
+      type: 'list',
+      name: 'subscription',
+      message: 'Which subscription type do you want to use? (Go to https://binarta.com/pricing for more details)',
+      choices: [
+        {name: 'Personal', value: 'essential'},
+        {name: 'Business', value: 'professional'},
+        {name: 'Commerce', value: 'enterprise'}
+      ],
+      default: 2
     }];
 
-    this.prompt(prompts, function (props) {
-      this.appname = props.name;
-      this.useSidebar = props.sidebar;
-
-      done();
+    return this.prompt(prompts).then(function (answers) {
+      this.namespace = answers.namespace;
+      this.subscription = answers.subscription;
     }.bind(this));
   },
 
   writing: {
-    projectfiles: function () {
-      this.fs.copy(
-        this.templatePath('editorconfig'),
-        this.destinationPath('.editorconfig')
-      );
-      this.fs.copy(
-        this.templatePath('jshintrc'),
-        this.destinationPath('.jshintrc')
-      );
-      this.fs.copy(
-        this.templatePath('gitignore'),
-        this.destinationPath('.gitignore')
-      );
-      this.fs.copy(
-        this.templatePath('files'),
-        this.destinationPath()
-      );
+    projectFiles: function () {
+      this.fs.copy(this.templatePath('editorconfig'), this.destinationPath('.editorconfig'));
+      this.fs.copy(this.templatePath('jshintrc'), this.destinationPath('.jshintrc'));
+      this.fs.copy(this.templatePath('gitignore'), this.destinationPath('.gitignore'));
+      this.fs.copy(this.templatePath('files'), this.destinationPath());
     },
 
     templates: function () {
-      this.fs.copyTpl(
-        this.templatePath('_package.json'),
-        this.destinationPath('package.json'),
-        {appname: this.appname}
-      );
-      this.fs.copyTpl(
-        this.templatePath('_bower.json'),
-        this.destinationPath('bower.json'),
-        {appname: this.appname}
-      );
-      this.fs.copyTpl(
-        this.templatePath('_config.json'),
-        this.destinationPath('config.json'),
-        {appname: this.appname}
-      );
-      this.fs.copyTpl(
-        this.templatePath('build.gradle'),
-        this.destinationPath('build.gradle'),
-        {appname: this.appname}
-      );
-      this.fs.copyTpl(
-        this.templatePath('app.js'),
-        this.destinationPath('src/web/scripts/app.js'),
-        {appname: this.appname, useSidebar: this.useSidebar})
-      ;
-      this.fs.copyTpl(
-        this.templatePath('config.js.template.template'),
-        this.destinationPath('src/web/scripts/config.js.template.template'),
-        {appname: this.appname}
-      );
-      this.fs.copyTpl(
-        this.templatePath('index.html.template.template'),
-        this.destinationPath('src/web/index.html.template.template'),
-        {appname: this.appname, useSidebar: this.useSidebar}
-      );
-      if(this.useSidebar) {
-        this.fs.copyTpl(
-          this.templatePath('header-sidebar.html'),
-          this.destinationPath('src/web/partials/header.html'),
-          {appname: this.appname}
-        );
-        this.fs.copyTpl(
-          this.templatePath('sidebar/sidebar.html'),
-          this.destinationPath('src/web/partials/nav/sidebar.html'),
-          {appname: this.appname}
-        );
-        this.fs.copy(
-          this.templatePath('sidebar/menu.html'),
-          this.destinationPath('src/web/partials/nav/menu.html')
-        );
-        this.fs.copy(
-          this.templatePath('styles/sidebar/navbar-toggle.less'),
-          this.destinationPath('src/web/styles/navbar-toggle.less')
-        );
-      } else {
-        this.fs.copyTpl(
-          this.templatePath('header-default.html'),
-          this.destinationPath('src/web/partials/header.html'),
-          {appname: this.appname}
-        );
-      }
-      this.fs.copyTpl(
-        this.templatePath('footer.html'),
-        this.destinationPath('src/web/partials/footer.html'),
-        {appname: this.appname}
-      );
-      this.fs.copyTpl(
-        this.templatePath('styles/main.less'),
-        this.destinationPath('src/web/styles/main.less'),
-        {useSidebar: this.useSidebar}
-      );
-      this.fs.copyTpl(
-        this.templatePath('styles/nav.less'),
-        this.destinationPath('src/web/styles/nav.less'),
-        {useSidebar: this.useSidebar}
-      );
-      this.fs.copyTpl(
-        this.templatePath('styles/combined.less'),
-        this.destinationPath('src/web/styles/combined.less'),
-        {useSidebar: this.useSidebar}
-      );
+      var variables = {
+        namespace: this.namespace,
+        subscription: this.subscription
+      };
+
+      this.fs.copyTpl(this.templatePath('_package.json'), this.destinationPath('package.json'), variables);
+      this.fs.copyTpl(this.templatePath('_bower.json'), this.destinationPath('bower.json'), variables);
+      this.fs.copyTpl(this.templatePath('_bower.json.template'), this.destinationPath('bower.json.template'), variables);
+      this.fs.copyTpl(this.templatePath('_config.json'), this.destinationPath('config.json'), variables);
+      this.fs.copyTpl(this.templatePath('_user-config.json'), this.destinationPath('user-config.json'), variables);
+      this.fs.copyTpl(this.templatePath('build.gradle'), this.destinationPath('build.gradle'), variables);
+      this.fs.copyTpl(this.templatePath('app.js'), this.destinationPath('src/web/scripts/app.js'), variables);
+      this.fs.copyTpl(this.templatePath('config.js.template.template'), this.destinationPath('src/web/scripts/config.js.template.template'), variables);
+      this.fs.copyTpl(this.templatePath('index.html.template.template'), this.destinationPath('src/web/index.html.template.template'), variables);
+      this.fs.copyTpl(this.templatePath('header.html'), this.destinationPath('src/web/partials/header.html'), variables);
+      this.fs.copyTpl(this.templatePath('sidebar.html'), this.destinationPath('src/web/partials/nav/sidebar.html'), variables);
+      this.fs.copyTpl(this.templatePath('footer.html'), this.destinationPath('src/web/partials/footer.html'), variables);
     }
   },
 
   install: function () {
-    this.installDependencies({
-      skipInstall: this.options['skip-install']
-    });
+    this.npmInstall();
+    this.bowerInstall();
+  },
+
+  end: function () {
+    this.log('\n\nAll done! Just run "' + chalk.blue.bold('gulp serve') + '" and go to "http://localhost:3000" to view your new app.\n');
   }
 });
