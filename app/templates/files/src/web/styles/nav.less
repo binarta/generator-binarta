@@ -1,21 +1,18 @@
-.nav {
-  &>li {
-    &.disabled {
-      &>a {
-        &:focus,
-        &:hover {
-          cursor: inherit;
-        }
-      }
-    }
-  }
-}
-
 @media (max-width: @screen-xs-max) {
   .navbar-app-top {
     .navbar-brand {
       opacity: 1;
       transition: opacity 0.5s ease-in-out;
+    }
+  }
+
+  #navbar {
+    .nav {
+      li {
+        a {
+          display: block;
+        }
+      }
     }
   }
 
