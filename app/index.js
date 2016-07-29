@@ -19,11 +19,14 @@ module.exports = yeoman.Base.extend({
       'When finished, you\'ll see the namespace in the url of your newly created application, ' +
       'e.g. http://' + chalk.blue.bold('my-namespace') + '.app.binarta.com.\n\n');
 
-    var prompts = [{
+
+    var askForNamespace = {
       type: 'input',
       name: 'namespace',
       message: 'What is your Binarta namespace?'
-    }, {
+    };
+
+    var askForSubscription = {
       type: 'list',
       name: 'subscription',
       message: 'Which subscription type do you want to use? (Go to https://binarta.com/pricing for more details)',
@@ -33,11 +36,11 @@ module.exports = yeoman.Base.extend({
         {name: 'Commerce', value: 'enterprise'}
       ],
       default: 2
-    }];
+    };
 
-    return this.prompt(prompts).then(function (answers) {
+    return this.prompt([askForNamespace]).then(function (answers) {
       this.namespace = answers.namespace;
-      this.subscription = answers.subscription;
+      this.subscription = answers.subscription || 'essential';
     }.bind(this));
   },
 
@@ -52,11 +55,11 @@ module.exports = yeoman.Base.extend({
     templates: function () {
       var variables = {
         namespace: this.namespace,
-        subscription: this.subscription
+        subscription: this.subscription,
+        year: new Date().getFullYear()
       };
 
       this.fs.copyTpl(this.templatePath('_package.json'), this.destinationPath('package.json'), variables);
-      this.fs.copyTpl(this.templatePath('_bower.json'), this.destinationPath('bower.json'), variables);
       this.fs.copyTpl(this.templatePath('_bower.json.template'), this.destinationPath('bower.json.template'), variables);
       this.fs.copyTpl(this.templatePath('_config.json'), this.destinationPath('config.json'), variables);
       this.fs.copyTpl(this.templatePath('_user-config.json'), this.destinationPath('user-config.json'), variables);
@@ -71,11 +74,13 @@ module.exports = yeoman.Base.extend({
   },
 
   install: function () {
-    this.npmInstall();
-    this.bowerInstall();
+    this.spawnCommandSync('npm', ['update']);
+    this.spawnCommandSync('gulp', ['update']);
   },
 
   end: function () {
-    this.log('\n\nAll done! Just run "' + chalk.blue.bold('gulp serve') + '" and go to "http://localhost:3000" to view your new app.\n');
+    this.log(
+      '\n\nAll done! ' +
+      'Just run "' + chalk.blue.bold('gulp serve') + '" and go to "' + chalk.blue.bold('http://localhost:3000') + '" to view your new app.\n');
   }
 });
