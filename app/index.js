@@ -67,6 +67,7 @@ module.exports = yeoman.Base.extend({
       this.fs.copyTpl(this.templatePath('app.js'), this.destinationPath('src/web/scripts/app.js'), variables);
       this.fs.copyTpl(this.templatePath('config.js.template.template'), this.destinationPath('src/web/scripts/config.js.template.template'), variables);
       this.fs.copyTpl(this.templatePath('index.html.template.template'), this.destinationPath('src/web/index.html.template.template'), variables);
+      this.fs.copyTpl(this.templatePath('robots.txt.template.template'), this.destinationPath('src/web/robots.txt.template.template'), variables);
       this.fs.copyTpl(this.templatePath('header.html'), this.destinationPath('src/web/partials/header.html'), variables);
       this.fs.copyTpl(this.templatePath('sidebar.html'), this.destinationPath('src/web/partials/nav/sidebar.html'), variables);
       this.fs.copyTpl(this.templatePath('footer.html'), this.destinationPath('src/web/partials/footer.html'), variables);
