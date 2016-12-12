@@ -1,3 +1,3 @@
 User-agent: *
 Disallow:
-Sitemap: <%print('${applicationUrl}')%>sitemap.xml
+Sitemap: <%%print('${applicationUrl}')%>sitemap.xml

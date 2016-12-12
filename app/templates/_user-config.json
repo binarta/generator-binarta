@@ -5,5 +5,6 @@
   "binartaUrl": "http://<%= namespace %>.app.binarta.com/",
   "socketUrl": "http://<%= namespace %>.app.binarta.com/ws/",
   "analytics": false,
-  "subscription": "<%= subscription %>"
+  "subscription": "<%= subscription %>",
+  "defaultLocaleFromMetadata": "en"
 }
