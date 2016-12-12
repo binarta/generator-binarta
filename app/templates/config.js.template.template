@@ -16,7 +16,7 @@ angular.module('<%= namespace %>')
             intercomAppId: '${intercomAppId}',
             inspectletSiteId: '${inspectletSiteId}',
             useDefaultAsMainLocale: true,
-            <%if(defaultLocaleFromMetadata) {%>defaultLocaleFromMetadata: '<%=defaultLocaleFromMetadata%>',<%}%>
+            <%%if(defaultLocaleFromMetadata) {%>defaultLocaleFromMetadata: '<%=defaultLocaleFromMetadata%>',<%%}%>
             languages: ${languages}
             <%% if(catalog) { %>
             ,countries: ${countries}
