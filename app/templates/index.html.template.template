@@ -11,10 +11,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=no"/>
   <meta name="robots" content="<%%print('${robots}')%>">
   <meta ng-if="unlocalizedPath == '/404'" name="prerender-status-code" content="404">
-  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="//cdn.binarta.com/image/favicon/apple-114.png">
-  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="//cdn.binarta.com/image/favicon/apple-72.png">
-  <link rel="apple-touch-icon-precomposed" href="//cdn.binarta.com/image/favicon/apple-57.png">
-  <link rel="shortcut icon" href="//cdn.binarta.com/image/favicon/favicon.png" type="image/x-icon">
   <script>
     window.prerenderReady = false;
     <%%if(debugInfoEnabled) {%>window.debugInfoEnabled = true;<%%}%>
