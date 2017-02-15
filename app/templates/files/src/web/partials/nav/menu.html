@@ -1,13 +1,13 @@
 <div id="navbar" ng-controller="NavCtrl">
   <ul class="nav navbar-nav">
     <li ng-class="{active: isActive('/')}">
-      <a ng-href="{{'/' | i18nRoute}}" i18n code="navigation.label.home" ng-bind="var"></a>
+      <a ng-href="{{'/' | i18nRoute}}" i18n code="nav.home" ng-bind="var"></a>
     </li>
     <li ng-class="{active: isActive('/blog')}">
-      <a href="{{'/blog' | i18nRoute}}" i18n code="navigation.label.blog" ng-bind="var"></a>
+      <a href="{{'/blog' | i18nRoute}}" i18n code="nav.blog" ng-bind="var"></a>
     </li>
     <li ng-class="{active: isActive('/contact')}">
-      <a href="{{'/contact' | i18nRoute}}" i18n code="navigation.label.contact" ng-bind="var"></a>
+      <a href="{{'/contact' | i18nRoute}}" i18n code="nav.contact" ng-bind="var"></a>
     </li>
   </ul>
 

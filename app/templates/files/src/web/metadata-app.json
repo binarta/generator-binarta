@@ -1,21 +1,21 @@
 {
   "msgs":{
     "en":{
-      "navigation.label.home":"home",
-      "navigation.label.blog":"blog",
-      "navigation.label.contact":"contact",
-      "navigation.label.conditions":"Algemene voorwaarden",
+      "nav.home":"home",
+      "nav.blog":"blog",
+      "nav.contact":"contact",
+      "nav.conditions":"Algemene voorwaarden",
 
       "contact.form.name":"Naam",
       "contact.form.email":"Email",
       "contact.form.subject":"Onderwerp",
       "contact.form.message":"Boodschap",
-      "contact.form.send":"Verstuur bericht!",
+      "contact.form.submit":"Verstuur bericht!",
       "contact.address":"Mijn adres, nummer, 3000 Leuven",
       "contact.phone":"012 34 56 78",
 
-      "terms.and.conditions.title":"Algemene Voorwaarden (AV)",
-      "terms.and.conditions.body":"Voor onze algemene voorwaarden, gelieve ons te <a href='#!/contact'>contacteren</a>."
+      "toc.title":"Algemene Voorwaarden (AV)",
+      "toc.body":"Voor onze algemene voorwaarden, gelieve ons te <a href='#!/contact'>contacteren</a>."
     }
   }
 }
