@@ -1,19 +1,19 @@
 <div id="navbar" ng-controller="NavCtrl">
   <ul class="nav navbar-nav">
     <li ng-class="{active: isActive('/')}">
-      <a ng-href="{{'/' | i18nRoute}}" i18n code="nav.home" ng-bind="var"></a>
+      <a bin-href="/" i18n code="nav.home" ng-bind="var"></a>
     </li>
     <li ng-class="{active: isActive('/blog')}">
-      <a href="{{'/blog' | i18nRoute}}" i18n code="nav.blog" ng-bind="var"></a>
+      <a bin-href="/blog" i18n code="nav.blog" ng-bind="var"></a>
     </li>
     <li ng-class="{active: isActive('/contact')}">
-      <a href="{{'/contact' | i18nRoute}}" i18n code="nav.contact" ng-bind="var"></a>
+      <a bin-href="/contact" i18n code="nav.contact" ng-bind="var"></a>
     </li>
   </ul>
 
   <ul class="nav navbar-nav navbar-right">
     <li checkpoint-is-authenticated ng-hide="authenticated">
-      <a href="{{'/signin' | i18nRoute}}"><i class="fa fa-user"></i> Login</a>
+      <a bin-href="/signin"><i class="fa fa-user"></i> Login</a>
     </li>
   </ul>
 </div>
