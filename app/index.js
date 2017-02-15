@@ -26,21 +26,9 @@ module.exports = yeoman.Base.extend({
       message: 'What is your Binarta namespace?'
     };
 
-    var askForSubscription = {
-      type: 'list',
-      name: 'subscription',
-      message: 'Which subscription type do you want to use? (Go to https://binarta.com/pricing for more details)',
-      choices: [
-        {name: 'Personal', value: 'essential'},
-        {name: 'Business', value: 'professional'},
-        {name: 'Commerce', value: 'enterprise'}
-      ],
-      default: 2
-    };
-
     return this.prompt([askForNamespace]).then(function (answers) {
       this.namespace = answers.namespace;
-      this.subscription = answers.subscription || 'essential';
+      this.subscription = 'essential';
     }.bind(this));
   },
 
@@ -80,6 +68,6 @@ module.exports = yeoman.Base.extend({
   end: function () {
     this.log(
       '\n\nAll done! ' +
-      'Just run "' + chalk.blue.bold('gulp serve') + '" and go to "' + chalk.blue.bold('http://localhost:3000') + '" to view your new app.\n');
+      'Just run "' + chalk.blue.bold('gulp serve') + '" to view your new app.\n');
   }
 });
