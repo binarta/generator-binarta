@@ -10,9 +10,8 @@
       "bootstrap": "bower_components/bootstrap/dist/js/bootstrap.min.js"
     }
   },
-  "sources": [
-    "src/web/metadata.json",
-    "src/web/metadata-app.json"
+  "fonts": [
+    "bower_components/font-awesome/fonts/*"
   ],
   "stylesUrl": "styles/app.css",
   "javascriptUrl": "scripts/libs.js",
