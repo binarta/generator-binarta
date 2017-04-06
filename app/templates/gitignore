@@ -4,5 +4,5 @@
 build
 node_modules
 bower_components
-user-config.json
+user-config*.json
 bower.json
