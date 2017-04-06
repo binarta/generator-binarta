@@ -13,11 +13,6 @@ angular.module("<%= namespace %>", ['<%= subscription %>.app'])
             .when('/:locale/404', {templateUrl: 'partials/404.html'})
             .otherwise({redirectTo: '/404'});
     }])
-    .controller('MainCtrl', ['$scope', '$location', function ($scope, $location) {
-        $scope.getAbsUrl = function () {
-            return $location.absUrl();
-        };
-    }])
     .controller('NavCtrl', ['$scope', '$location', function ($scope, $location) {
         $scope.isActive = function (route) {
             return route == $location.path();

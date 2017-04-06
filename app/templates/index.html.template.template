@@ -2,7 +2,7 @@
 <!--[if lte IE 9 ]>
 <html> <![endif]-->
 <!--[if (gt IE 9)|!(IE)]><!-->
-<html ng-app="<%= namespace %>" ng-controller="MainCtrl"><!--<![endif]-->
+<html ng-app="<%= namespace %>"><!--<![endif]-->
 <head>
   <base href="<%%print('${applicationUrl}')%>">
   <meta charset="utf-8">
@@ -15,7 +15,6 @@
     window.prerenderReady = false;
     <%%if(debugInfoEnabled) {%>window.debugInfoEnabled = true;<%%}%>
   </script>
-  <link rel="canonical" href="{{getAbsUrl()}}">
   <link rel="stylesheet" type="text/css" href="${stylesUrl}?${version}">
   <!--[if (gt IE 9)|!(IE)]><!-->
   <script src="${javascriptUrl}?${version}"></script>
