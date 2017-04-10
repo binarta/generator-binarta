@@ -9,8 +9,6 @@ angular.module('<%= namespace %>')
             socketUri: '<%%print('${socketUrl}')%>',
             binartaBaseUri: '${binartaBaseUri}',
             styling: 'bootstrap3',
-            cookiesBinartaRedirect:false,
-            cookiesAutoGrantPermission:true,
             analytics: '<%%print('${analytics}')%>',
             sharedAnalytics: '${sharedAnalytics}',
             intercomAppId: '${intercomAppId}',
