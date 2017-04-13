@@ -1,0 +1,10 @@
+{
+  "namespace": "<%= namespace %>",
+  "applicationUrl": "/",
+  "cdnUrl": "https://d3ogqq5glfxu1q.cloudfront.net/image/<%= namespace %>/",
+  "binartaUrl": "http://<%= namespace %>.app.binarta.demo.thinkerit.be/",
+  "socketUrl": "http://<%= namespace %>.app.binarta.demo.thinkerit.be/ws/",
+  "analytics": false,
+  "subscription": "<%= subscription %>",
+  "defaultLocaleFromMetadata": "en"
+}

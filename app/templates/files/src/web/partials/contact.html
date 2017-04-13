@@ -1,54 +1,52 @@
 <div class="container">
-
-  <div class="row">
-    <div class="col-xs-12">
-      <div class="page-header">
+    <div class="page-header">
         <h1>Contact</h1>
-      </div>
     </div>
-  </div>
 
-  <div class="row">
-    <div class="col-xs-12 col-sm-6">
-      <ul class="list-unstyled">
-        <li i18n code="contact.address" editor="full">
-          <i class="fa fa-map-marker"></i> <span ng-bind-html="var|trust"></span>
-        </li>
-        <li i18n code="contact.phone">
-          <i class="fa fa-phone"></i> <span ng-bind="var"></span>
-        </li>
-        <li bin-config key="application.email" scope="public" input-type="email">
-          <i class="fa fa-envelope"></i> <a ng-href="mailto:{{config.value}}" ng-bind="config.value"></a>
-        </li>
-      </ul>
+    <div class="row">
+        <div class="col-xs-12 col-sm-6">
+            <ul class="list-unstyled">
+                <li i18n code="contact.address" editor="full">
+                    <i class="fa fa-map-marker"></i> <span ng-bind-html="var|trust"></span>
+                </li>
+                <li i18n code="contact.phone">
+                    <i class="fa fa-phone"></i> <span ng-bind="var"></span>
+                </li>
+                <li bin-config key="application.email" scope="public" input-type="email">
+                    <i class="fa fa-envelope"></i> <a ng-href="mailto:{{config.value}}" ng-bind="config.value"></a>
+                </li>
+            </ul>
+        </div>
+        <div class="col-xs-12 col-sm-6" ng-controller="ContactUsController" ng-init="init({useMailContext:true})">
+            <form ng-submit="submit()">
+                <div class="form-group has-{{errorClassFor('name')}}">
+                    <label for="name" class="inline" i18n code="contact.form.name" ng-bind="var"></label>
+                    <input type="text" class="form-control" id="name" ng-model="mail.name" ng-disabled="sending">
+                </div>
+
+                <div class="form-group has-{{errorClassFor('replyTo')}}">
+                    <label for="email" class="inline" i18n code="contact.form.email" ng-bind="var"></label>
+                    <input type="email" class="form-control" id="email" ng-model="mail.replyTo" required
+                           ng-disabled="sending">
+                </div>
+
+                <div class="form-group has-{{errorClassFor('subject')}}">
+                    <label for="subject" class="inline" i18n code="contact.form.subject" ng-bind="var"></label>
+                    <input type="text" class="form-control" id="subject" ng-model="mail.subject" ng-disabled="sending">
+                </div>
+
+                <div class="form-group has-{{errorClassFor('message')}}">
+                    <label for="message" class="inline" i18n code="contact.form.message" ng-bind="var"></label>
+                    <textarea class="form-control" id="message" rows="3" ng-model="mail.message" required
+                              ng-disabled="sending"></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-default inline" i18n code="contact.form.submit"
+                        ng-disabled="sending">
+                    <span ng-show="sending"><i class="fa fa-spinner fa-spin"></i></span>
+                    <span ng-bind="var"></span>
+                </button>
+            </form>
+        </div>
     </div>
-    <div class="col-xs-12 col-sm-6" ng-controller="ContactUsController" ng-init="init({useMailContext:true})">
-      <form ng-submit="submit()">
-        <div class="form-group has-{{errorClassFor('name')}}">
-          <label for="name" class="inline" i18n code="contact.form.name" ng-bind="var"></label>
-          <input type="text" class="form-control" id="name" ng-model="mail.name" ng-disabled="sending">
-        </div>
-
-        <div class="form-group has-{{errorClassFor('replyTo')}}">
-          <label for="email" class="inline" i18n code="contact.form.email" ng-bind="var"></label>
-          <input type="email" class="form-control" id="email" ng-model="mail.replyTo" required ng-disabled="sending">
-        </div>
-
-        <div class="form-group has-{{errorClassFor('subject')}}">
-          <label for="subject" class="inline" i18n code="contact.form.subject" ng-bind="var"></label>
-          <input type="text" class="form-control" id="subject" ng-model="mail.subject" ng-disabled="sending">
-        </div>
-
-        <div class="form-group has-{{errorClassFor('message')}}">
-          <label for="message" class="inline" i18n code="contact.form.message" ng-bind="var"></label>
-          <textarea class="form-control" id="message" rows="3" ng-model="mail.message" required ng-disabled="sending"></textarea>
-        </div>
-
-        <button type="submit" class="btn btn-default inline" i18n code="contact.form.submit" ng-disabled="sending">
-          <span ng-show="sending"><i class="fa fa-spinner fa-spin"></i></span>
-          <span ng-bind="var"></span>
-        </button>
-      </form>
-    </div>
-  </div>
 </div>

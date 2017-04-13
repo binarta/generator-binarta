@@ -1,4 +1,4 @@
-angular.module("<%= namespace %>", ['<%= subscription %>.app'])
+angular.module('<%= namespace %>', ['<%= subscription %>.app', 'app.components'])
     .config(['$routeProvider', function ($routeProvider) {
         $routeProvider
             .when('/', {templateUrl: 'partials/index.html'})
@@ -12,13 +12,4 @@ angular.module("<%= namespace %>", ['<%= subscription %>.app'])
             .when('/:locale/conditions', {templateUrl: 'partials/conditions.html'})
             .when('/:locale/404', {templateUrl: 'partials/404.html'})
             .otherwise({redirectTo: '/404'});
-    }])
-    .controller('NavCtrl', ['$scope', '$location', function ($scope, $location) {
-        $scope.isActive = function (route) {
-            return route == $location.path();
-        };
-
-        $scope.collapse = function () {
-            if ($scope.viewport.xs) angular.element('#navbar').collapse('hide');
-        };
     }]);

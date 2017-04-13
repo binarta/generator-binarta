@@ -22,19 +22,11 @@
   <script src="scripts/config.js?${version}"></script>
   <!--<![endif]-->
 </head>
-<body class="notifications" editmode="{{editing}}" checkpoint-permission-for="edit.mode"
-      ng-class="{'clerkmenu-visible': permitted, 'sidebar-visible': amc.status() == 'opened'}"
-      ng-controller="ApplicationMenuController as amc">
+<body class="notifications" editmode="{{editing}}">
 <!--[if (gt IE 9)|!(IE)]><!-->
-<main class="main-container-wrapper" ng-swipe-left="amc.close()" ng-swipe-right="amc.open()">
-    <cookie-permission-granted></cookie-permission-granted>
-    <ng-include src="'partials/header.html'"></ng-include>
-    <div class="main-container" ng-click="amc.close()">
-        <div ng-view></div>
-        <ng-include src="'partials/footer.html'"></ng-include>
-    </div>
-</main>
-<ng-include src="'partials/nav/sidebar.html'" class="visible-xs"></ng-include>
+<main-navbar></main-navbar>
+<div ng-view></div>
+<main-footer></main-footer>
 <!--<![endif]-->
 
 <div ng-if="::false">

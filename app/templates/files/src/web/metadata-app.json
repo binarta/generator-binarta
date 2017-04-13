@@ -4,18 +4,18 @@
       "nav.home":"home",
       "nav.blog":"blog",
       "nav.contact":"contact",
-      "nav.conditions":"Algemene voorwaarden",
+      "nav.conditions":"Conditions",
 
-      "contact.form.name":"Naam",
+      "contact.form.name":"Name",
       "contact.form.email":"Email",
-      "contact.form.subject":"Onderwerp",
-      "contact.form.message":"Boodschap",
-      "contact.form.submit":"Verstuur bericht!",
-      "contact.address":"Mijn adres, nummer, 3000 Leuven",
+      "contact.form.subject":"Subject",
+      "contact.form.message":"Message",
+      "contact.form.submit":"Send",
+      "contact.address":"My address, number, 3000 Leuven",
       "contact.phone":"012 34 56 78",
 
-      "toc.title":"Algemene Voorwaarden (AV)",
-      "toc.body":"Voor onze algemene voorwaarden, gelieve ons te contacteren."
+      "toc.title":"Conditions",
+      "toc.body":"Contact us for information about our terms & conditions."
     }
   }
 }
