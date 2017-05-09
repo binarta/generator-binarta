@@ -15,11 +15,12 @@
     window.prerenderReady = false;
     <%%if(debugInfoEnabled) {%>window.debugInfoEnabled = true;<%%}%>
   </script>
-  <link rel="stylesheet" type="text/css" href="${stylesUrl}?${version}">
+  <@link rel="stylesheet" type="text/css" href="${stylesUrl}?${version}"></@link>
   <!--[if (gt IE 9)|!(IE)]><!-->
-  <script src="${javascriptUrl}?${version}"></script>
-  <script src="scripts/partials.js?${version}"></script>
-  <script src="scripts/config.js?${version}"></script>
+  <@script src="${javascriptUrl}?${version}"></@script>
+  <@script src="scripts/partials.js?${version}"></@script>
+  <@script src="scripts/config.js?${version}"></@script>
+  <@application_profile></@application_profile>
   <!--<![endif]-->
 </head>
 <body class="notifications" editmode="{{editing}}">
