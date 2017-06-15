@@ -3,8 +3,14 @@
 <html> <![endif]-->
 <!--[if (gt IE 9)|!(IE)]><!-->
 <html ng-app="<%= namespace %>"><!--<![endif]-->
-<head>
+<head prefix="og: http://ogp.me/ns#">
   <base href="<%%print('${applicationUrl}')%>">
+  <meta property="og:type" content="website">
+  <@og_site_name></@og_site_name>
+  <@og_title></@og_title>
+  <@og_description></@og_description>
+  <@og_image></@og_image>
+  <@og_url></@og_url>
   <meta charset="utf-8">
   <meta name="fragment" content="!">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
