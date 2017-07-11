@@ -1,4 +1,4 @@
-angular.module('<%= namespace %>')
+angular.module('app.config', ['${subscription}.app'])
     .config(['configProvider', function (configProvider) {
         configProvider.add({
             namespace:'<%%print('${namespace}')%>',

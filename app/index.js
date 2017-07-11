@@ -52,7 +52,6 @@ module.exports = yeoman.Base.extend({
       this.fs.copyTpl(this.templatePath('_user-config-demo.json'), this.destinationPath('user-config-demo.json'), variables);
       this.fs.copyTpl(this.templatePath('build.gradle'), this.destinationPath('build.gradle'), variables);
       this.fs.copyTpl(this.templatePath('app.js'), this.destinationPath('src/web/scripts/app.js'), variables);
-      this.fs.copyTpl(this.templatePath('config.js.template.template'), this.destinationPath('src/web/scripts/config.js.template.template'), variables);
       this.fs.copyTpl(this.templatePath('index.html.template.template'), this.destinationPath('src/web/index.ftl.template.template'), variables);
       this.fs.copyTpl(this.templatePath('robots.txt.template.template'), this.destinationPath('src/web/robots.txt.template.template'), variables);
       this.fs.copyTpl(this.templatePath('main-navbar.html'), this.destinationPath('src/web/partials/components/main-navbar.html'), variables);

@@ -1,4 +1,4 @@
-angular.module('<%= namespace %>', ['<%= subscription %>.app', 'app.components'])
+angular.module('<%= namespace %>', ['app.config', 'app.components'])
     .config(['$routeProvider', function ($routeProvider) {
         $routeProvider
             .when('/', {templateUrl: 'partials/index.html'})
