@@ -1,5 +1,6 @@
 {
   "appName": "<%= namespace %>",
+  "html5": true,
   "defaultLocaleFromMetadata": "",
   "debugControlsEnabled": false,
   "debugInfoEnabled": false,
