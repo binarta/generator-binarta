@@ -1,24 +1,23 @@
 angular.module('app.config', ['${subscription}.app'])
     .config(['configProvider', function (configProvider) {
         configProvider.add({
-            namespace:'<%%print('${namespace}')%>',
+            namespace:'<%print('${namespace}')%>',
             image:{cache:true},
             autoUpload: true,
-            awsPath:'<%%print('${cdnUrl}')%>',
-            baseUri:'<%%print('${binartaUrl}')%>',
-            socketUri: '<%%print('${socketUrl}')%>',
+            awsPath:'<%print('${cdnUrl}')%>',
+            baseUri:'<%print('${binartaUrl}')%>',
+            socketUri: '<%print('${socketUrl}')%>',
             binartaBaseUri: '${binartaBaseUri}',
             styling: 'bootstrap3',
-            analytics: '<%%print('${analytics}')%>',
+            analytics: '<%print('${analytics}')%>',
             sharedAnalytics: '${sharedAnalytics}',
             intercomAppId: '${intercomAppId}',
-            inspectletSiteId: '${inspectletSiteId}',
             useDefaultAsMainLocale: true,
-            <%%if(defaultLocaleFromMetadata) {%>defaultLocaleFromMetadata: '<%%=defaultLocaleFromMetadata%>',<%%}%>
+            <%if(defaultLocaleFromMetadata) {%>defaultLocaleFromMetadata: '<%=defaultLocaleFromMetadata%>',<%}%>
             languages: ${languages}
-            <%% if(catalog) { %>
+            <% if(catalog) { %>
             ,countries: ${countries}
             ,euVatRates: ${euVatRates}
-            <%% } %>
+            <% } %>
         });
     }]);
