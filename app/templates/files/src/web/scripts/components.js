@@ -6,7 +6,7 @@
     function MainNavbarComponent() {
         this.templateUrl = 'partials/components/main-navbar.html';
         this.controller = ['$scope', 'binarta', function ($scope, binarta) {
-            var $ctrl = this, observers = [];
+            var $ctrl = this;
 
             $scope.$on('$routeChangeStart', function () {
                 $ctrl.path = binarta.application.unlocalizedPath();
@@ -17,13 +17,10 @@
                     signedin: onSignedIn,
                     signedout: onSignedOut
                 });
-                observers.push(checkpointObserver);
-            };
 
-            $ctrl.$onDestroy = function () {
-                observers.forEach(function (observer) {
-                    observer.disconnect();
-                });
+                $ctrl.$onDestroy = function () {
+                    checkpointObserver.disconnect();
+                };
             };
 
             function onSignedIn() {
