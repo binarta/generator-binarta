@@ -1,6 +1,6 @@
 {
   "name": "generator-binarta",
-  "version": "0.2.6",
+  "version": "0.2.7",
   "description": "Yeoman generator for creating a new Binarta template",
   "license": "MIT",
   "main": "app/index.js",
