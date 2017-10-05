@@ -14,7 +14,9 @@ module.exports = yeoman.Base.extend({
     ));
 
     this.log('To get started, make sure you have a Binarta namespace.\n\n' +
-      'You can easily create your own namespace by going to "https://binarta.com/template-selection".\n\n' +
+      'You can easily create your own namespace by going to \n' +
+      '"http://binarta.app.binarta.demo.thinkerit.be/template-selection" for demo and \n' +
+      '"https://binarta.com/template-selection" for production.\n\n' +
       'Choose a design (doesn\'t matter which one) and choose a name for your application.\n' +
       'When finished, you\'ll see the namespace in the url of your newly created application, ' +
       'e.g. http://' + chalk.blue.bold('my-namespace') + '.app.binarta.com.\n\n');
