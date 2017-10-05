@@ -28,7 +28,7 @@ module.exports = yeoman.Base.extend({
 
     return this.prompt([askForNamespace]).then(function (answers) {
       this.namespace = answers.namespace;
-      this.subscription = 'essential';
+      this.subscription = 'professional';
     }.bind(this));
   },
 
@@ -36,6 +36,7 @@ module.exports = yeoman.Base.extend({
     projectFiles: function () {
       this.fs.copy(this.templatePath('gitignore'), this.destinationPath('.gitignore'));
       this.fs.copy(this.templatePath('files'), this.destinationPath());
+      this.fs.copy(this.templatePath('config.json'), this.destinationPath('config.json'));
     },
 
     templates: function () {
@@ -47,15 +48,9 @@ module.exports = yeoman.Base.extend({
 
       this.fs.copyTpl(this.templatePath('_package.json'), this.destinationPath('package.json'), variables);
       this.fs.copyTpl(this.templatePath('_bower.json.template'), this.destinationPath('bower.json.template'), variables);
-      this.fs.copyTpl(this.templatePath('_config.json'), this.destinationPath('config.json'), variables);
       this.fs.copyTpl(this.templatePath('_user-config.json'), this.destinationPath('user-config.json'), variables);
-      this.fs.copyTpl(this.templatePath('_user-config-demo.json'), this.destinationPath('user-config-demo.json'), variables);
+      this.fs.copyTpl(this.templatePath('_user-config-prod.json'), this.destinationPath('user-config-prod.json'), variables);
       this.fs.copyTpl(this.templatePath('build.gradle'), this.destinationPath('build.gradle'), variables);
-      this.fs.copyTpl(this.templatePath('app.js'), this.destinationPath('src/web/scripts/app.js'), variables);
-      this.fs.copyTpl(this.templatePath('index.html.template.template'), this.destinationPath('src/web/index.ftl.template.template'), variables);
-      this.fs.copyTpl(this.templatePath('robots.txt.template.template'), this.destinationPath('src/web/robots.txt.template.template'), variables);
-      this.fs.copyTpl(this.templatePath('main-navbar.html'), this.destinationPath('src/web/partials/components/main-navbar.html'), variables);
-      this.fs.copyTpl(this.templatePath('main-footer.html'), this.destinationPath('src/web/partials/components/main-footer.html'), variables);
     }
   },
 
@@ -65,8 +60,6 @@ module.exports = yeoman.Base.extend({
   },
 
   end: function () {
-    this.log(
-      '\n\nAll done! ' +
-      'Just run "' + chalk.blue.bold('gulp serve') + '" to view your new app.\n');
+    this.log('\n\nAll done! Just run "' + chalk.blue.bold('gulp serve') + '" to view your new app.\n');
   }
 });

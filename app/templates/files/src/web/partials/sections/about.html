@@ -1,0 +1,11 @@
+<div class="container">
+    <app-section-title></app-section-title>
+    <div i18n code="{{::$ctrl.i18n.body}}" editor="full" ng-bind-html="var|trust"></div>
+</div>
+<div class="section-spacer"></div>
+<div class="container">
+    <bin-catalog-list type="info" partition="/info/">
+        <bin-catalog-items cols="sm-3" center="true" linkable="true"
+                           item-template-url="partials/bin-catalog-item/item-preview.html"></bin-catalog-items>
+    </bin-catalog-list>
+</div>

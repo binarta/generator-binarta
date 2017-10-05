@@ -1,0 +1,66 @@
+@content-carousel-dot-size: 13px;
+@content-carousel-dot-margin: 5px;
+@content-carousel-dot-color: #fff;
+
+content-carousel {
+  .dots-wrapper {
+    position: absolute;
+    bottom: @content-carousel-dot-size;
+    width: 100%;
+
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      text-align: center;
+
+      li {
+        display: inline-block;
+        margin: 0 @content-carousel-dot-margin;
+        line-height: 0;
+        font-size: 0;
+
+        button {
+          margin: 0;
+          padding: 0;
+          width: @content-carousel-dot-size;
+          height: @content-carousel-dot-size;
+          border: 2px solid @content-carousel-dot-color;
+          border-radius: 50%;
+          background: rgba(0,0,0,0.10);
+          outline: none;
+          box-shadow: 0 2px 3px 0 rgba(0,0,0,0.30);
+          transition: background-color ease 800ms;
+        }
+
+        &.active {
+          button {
+            background: @content-carousel-dot-color;
+          }
+        }
+      }
+    }
+  }
+
+  .arrows {
+    .arrow-prev, .arrow-next {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      border: none;
+      background: none;
+      outline: none;
+      color: transparent;
+      width: 50px;
+    }
+
+    .arrow-prev {
+      left: 0;
+
+    }
+
+    .arrow-next {
+      right: 0;
+    }
+  }
+}

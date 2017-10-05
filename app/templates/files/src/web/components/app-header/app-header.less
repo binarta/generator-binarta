@@ -1,0 +1,51 @@
+app-header {
+  .navbar {
+    position: relative;
+    text-align: center;
+    margin: 0;
+  }
+
+  .navbar-brand {
+    display: inline-block;
+    max-width: 70%;
+    vertical-align: middle;
+    float: none;
+    height: auto;
+  }
+
+  .navigation {
+    display: inline-block;
+  }
+
+  .language-switcher {
+    display: inline-block;
+    max-width: 30%;
+    vertical-align: middle;
+    text-align: right;
+  }
+
+  @media (min-width: @grid-float-breakpoint) {
+    .navbar {
+      text-align: left;
+    }
+
+    .navbar-header {
+      width: 30%;
+    }
+
+    .navigation {
+      width: 70%;
+      padding-top: @navbar-padding-vertical;
+      padding-bottom: @navbar-padding-vertical;
+    }
+
+    .navbar-nav {
+      float: right;
+
+      > li {
+        display: inline-block;
+        float: none;
+      }
+    }
+  }
+}

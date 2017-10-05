@@ -1,0 +1,35 @@
+<div ng-switch="::$ctrl.type">
+    <div ng-switch-when="blog">
+        <bin-section id="blog" class="no-padding">
+            <bin-catalog-breadcrumb></bin-catalog-breadcrumb>
+            <bin-section class="padding-top">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-8 col-sm-offset-2">
+                            <bin-catalog-item publishable="true" template-url="partials/bin-catalog-item/blog-item.html"></bin-catalog-item>
+                        </div>
+                    </div>
+                </div>
+            </bin-section>
+        </bin-section>
+    </div>
+    <div ng-switch-default>
+        <bin-section id="{{::$ctrl.type}}" class="no-padding">
+            <bin-catalog-breadcrumb template-url="partials/bin-catalog-breadcrumb/bin-catalog-breadcrumb.html"></bin-catalog-breadcrumb>
+            <bin-section class="padding-top">
+                <div class="container">
+                    <bin-catalog-item pinnable="true" template-url="partials/bin-catalog-item/catalog-item.html"></bin-catalog-item>
+                </div>
+            </bin-section>
+            <bin-section class="body-bg padding-top">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
+                            <bin-catalog-item-request-info-form></bin-catalog-item-request-info-form>
+                        </div>
+                    </div>
+                </div>
+            </bin-section>
+        </bin-section>
+    </div>
+</div>

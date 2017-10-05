@@ -1,0 +1,7 @@
+<form ng-submit="$ctrl.submitWhenFocussed()" i18n code="catalog.search.all.prefix" read-only var="searchAll">
+    <input type="text" ng-model="$ctrl.q" i18n code="navigation.label.{{::$ctrl.type}}" read-only
+           placeholder="{{::searchAll}} {{var|lowercase}}...">
+    <button type="submit">
+        <i class="fa fa-search"></i>
+    </button>
+</form>

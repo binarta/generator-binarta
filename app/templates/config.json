@@ -1,5 +1,5 @@
 {
-  "appName": "<%= namespace %>",
+  "appName": "app",
   "html5": true,
   "defaultLocaleFromMetadata": "",
   "debugControlsEnabled": false,
@@ -8,7 +8,8 @@
   "jsSources": {
     "default": {
       "app": "src/web/scripts/app.js",
-      "components": "src/web/scripts/components.js"
+      "websters.carousel": "bower_components/websters.carousel.angular/src/carousel.js",
+      "websters.carousel-tpls": "bower_components/websters.carousel.angular/src/carousel-tpls.js"
     }
   },
   "fonts": [

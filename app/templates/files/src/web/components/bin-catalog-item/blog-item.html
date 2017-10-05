@@ -1,0 +1,17 @@
+<article>
+    <img class="img-responsive" bin-image="{{::$ctrl.image.cover}}" alt="blog post cover image">
+    <h2 i18n code="{{::$ctrl.i18n.title}}" no-locale ng-bind="var"></h2>
+    <ul class="list-inline">
+        <li>
+            <i class="fa fa-clock-o fa-fw"></i>
+            <bin-catalog-publication-time time="$ctrl.item.publicationTime" status="$ctrl.item.status"></bin-catalog-publication-time>
+        </li>
+    </ul>
+    <hr>
+    <p class="bin-article-lead" i18n code="{{::$ctrl.i18n.lead}}" editor="full" no-locale ng-bind-html="var|trust"></p>
+    <p class="bin-article-body" i18n code="{{::$ctrl.i18n.body}}" editor="full-media" no-locale ng-bind-html="var|trust"></p>
+</article>
+<hr>
+<a bin-href="/blog" class="btn btn-primary">
+    <i class="fa fa-chevron-left fa-fw"></i> <span i18n code="blog.back" read-only ng-bind="::var"></span>
+</a>

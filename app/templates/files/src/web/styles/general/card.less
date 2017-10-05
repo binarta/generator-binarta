@@ -1,0 +1,29 @@
+.card {
+  text-align: center;
+  margin-bottom: @section-padding-xs;
+
+  bin-icon {
+    color: @brand-primary;
+  }
+
+  *[bin-background-image] {
+    background-position: center;
+    background-size: cover;
+  }
+
+  .thumbnail {
+    margin: 0;
+  }
+
+  &.blog-item {
+    figure {
+      .maintain-aspect-ratio-of(10, 7);
+    }
+  }
+
+  &.catalog-item {
+    figure {
+      .maintain-aspect-ratio-of(16, 10);
+    }
+  }
+}

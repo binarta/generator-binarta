@@ -1,0 +1,55 @@
+bin-section {
+  display: block;
+
+  > section {
+    padding-bottom: @section-padding-xs;
+
+    &.odd {
+      background-color: @gray-lighter;
+    }
+  }
+
+  &.gray-bg {
+    > section {
+      background-color: @gray-lighter;
+    }
+  }
+
+  &.body-bg {
+    > section {
+      background-color: @body-bg;
+    }
+  }
+
+  &.no-padding {
+    > section {
+      padding-bottom: 0;
+    }
+  }
+
+  &.padding-top {
+    > section {
+      padding-top: @section-padding-xs;
+    }
+  }
+
+  .section-spacer {
+    padding-bottom: @section-padding-xs;
+  }
+
+  @media (min-width: @screen-sm-min) {
+    > section {
+      padding-bottom: @section-padding-sm;
+    }
+
+    &.padding-top {
+      > section {
+        padding-top: @section-padding-sm;
+      }
+    }
+
+    .section-spacer {
+      padding-bottom: @section-padding-sm;
+    }
+  }
+}

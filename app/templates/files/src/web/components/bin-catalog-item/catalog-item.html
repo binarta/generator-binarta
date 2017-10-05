@@ -1,0 +1,24 @@
+<div class="row">
+    <div class="col-xs-12 col-sm-6">
+        <div class="item-line item-image thumbnail">
+            <bin-image-carousel item-id="$ctrl.item.id" items="$ctrl.item.carousel"
+                                template-url="partials/bin-image-carousel/bin-image-carousel.html">
+            </bin-image-carousel>
+        </div>
+    </div>
+    <div class="col-xs-12 col-sm-6">
+        <h2 class="item-line item-title" i18n code="{{::$ctrl.i18n.title}}" ng-bind="var"></h2>
+
+        <div class="item-line item-price">
+            <bin-price catalog-item="$ctrl.item" on-update="$ctrl.refresh()"></bin-price>
+        </div>
+
+        <div class="item-line item-cta">
+            <bin-catalog-item-cta item="$ctrl.item"></bin-catalog-item-cta>
+        </div>
+
+        <div class="item-line item-body" i18n code="{{::$ctrl.i18n.body}}" editor="full"
+             ng-bind-html="var|trust" ng-show="var || $ctrl.editing">
+        </div>
+    </div>
+</div>

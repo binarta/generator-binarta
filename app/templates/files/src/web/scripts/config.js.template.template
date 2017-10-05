@@ -19,5 +19,16 @@ angular.module('app.config', ['${subscription}.app'])
             ,countries: ${countries}
             ,euVatRates: ${euVatRates}
             <% } %>
+            ,application: {
+                pages: [
+                   {id: 'home', path: '/', permitted: true},
+                   {id: 'features', path: '/features', permitted: true},
+                   {id: 'about', path: '/about', permitted: ${about}},
+                   {id: 'products', path: '/browse/products/', permitted: ${catalog}},
+                   {id: 'services', path: '/browse/services/', permitted: ${catalog}},
+                   {id: 'blog', path: '/blog', permitted: ${blog}},
+                   {id: 'contact', path: '/contact', permitted: true}
+               ]
+            }
         });
     }]);

@@ -1,0 +1,52 @@
+app-footer {
+  display: block;
+  background: @gray;
+  color: #fff;
+
+  .container {
+    position: relative;
+  }
+
+  li {
+    &:first-child {
+      font-weight: bold;
+    }
+  }
+
+  a {
+    text-decoration: underline;
+
+    &:hover, &:focus {
+      color: inherit;
+    }
+  }
+
+  @media (max-width: (@grid-float-breakpoint - 1)) {
+    text-align: center;
+    padding: 50px 0 (50px + @navbar-height) 0;
+
+    bin-social-icons {
+      margin-bottom: 50px;
+    }
+
+    bin-list-inline {
+      li {
+        display: block;
+      }
+    }
+  }
+
+  @media (min-width: @grid-float-breakpoint) {
+    padding: 24px 0 29px 0;
+
+    bin-social-icons {
+      display: inline-block;
+      max-width: 30%;
+    }
+
+    bin-list-inline {
+      float: right;
+      padding: 10px 0;
+    }
+  }
+}

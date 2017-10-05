@@ -1,0 +1,6 @@
+<div class="container text-center">
+    <app-section-title></app-section-title>
+    <div i18n code="{{::$ctrl.i18n.body}}" editor="full" ng-bind-html="var|trust"></div>
+    <div class="section-spacer"></div>
+    <a bin-href="/" class="btn btn-primary" i18n code="{{::$ctrl.i18n.cta}}" ng-bind="var"></a>
+</div>

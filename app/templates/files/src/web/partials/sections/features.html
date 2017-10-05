@@ -1,0 +1,7 @@
+<div class="container">
+    <app-section-title></app-section-title>
+    <bin-catalog-list type="{{::$ctrl.id}}" partition="{{::'/' + $ctrl.id + '/'}}">
+        <bin-catalog-items cols="sm-4" center="true" linkable="true"
+                           item-template-url="partials/bin-catalog-item/item-preview.html"></bin-catalog-items>
+    </bin-catalog-list>
+</div>

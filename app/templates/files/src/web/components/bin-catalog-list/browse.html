@@ -1,0 +1,14 @@
+<bin-section id="{{::$ctrl.type}}" >
+    <bin-catalog-breadcrumb template-url="partials/bin-catalog-breadcrumb/bin-catalog-breadcrumb.html"></bin-catalog-breadcrumb>
+    <div class="container">
+        <bin-catalog-partition-title template-url="partials/bin-catalog-partition-title/bin-catalog-partition-title.html">
+        </bin-catalog-partition-title>
+        <bin-catalog-partitions>
+            <bin-catalog-partition-description></bin-catalog-partition-description>
+            <bin-catalog-item-groups pinnable="true" redirect-on-add="true"
+                                     item-template-url="partials/bin-catalog-item/catalog-item-preview.html"></bin-catalog-item-groups>
+            <bin-catalog-working></bin-catalog-working>
+            <bin-catalog-search-more></bin-catalog-search-more>
+        </bin-catalog-partitions>
+    </div>
+</bin-section>

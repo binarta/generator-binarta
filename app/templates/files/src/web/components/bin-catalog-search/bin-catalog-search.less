@@ -1,0 +1,31 @@
+bin-catalog-search {
+  display: block;
+  position: absolute;
+  top: 0;
+  right: @grid-gutter-width/2;
+
+  button {
+    position: relative;
+    background-color: @gray-lighter;
+    border: none;
+    padding: @breadcrumb-padding-vertical @breadcrumb-padding-horizontal;
+    color: @gray-light;
+    outline: none;
+  }
+
+  input {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 320px - @grid-gutter-width;
+    background: @gray-lighter;
+    border: none;
+    padding-top: @breadcrumb-padding-vertical;
+    padding-bottom: @breadcrumb-padding-vertical;
+    padding-right: (@breadcrumb-padding-horizontal + 40px);
+    padding-left: @breadcrumb-padding-horizontal;
+    outline: none;
+    -webkit-appearance: none;
+  }
+}

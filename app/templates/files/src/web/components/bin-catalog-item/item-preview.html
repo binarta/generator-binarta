@@ -1,0 +1,15 @@
+<div class="card">
+    <bin-icon value="{{::$ctrl.item.icon}}"
+              code="{{::$ctrl.item.id}}.icon"
+              default="fa-circle"
+              link="$ctrl.item.link"
+              link-target="$ctrl.item.linkTarget"
+              on-update="$ctrl.update(request, response)"
+              height="60">
+    </bin-icon>
+    <a ng-href="{{$ctrl.item.link}}" target="{{$ctrl.item.linkTarget}}" ng-if="$ctrl.item.link">
+        <h3 i18n code="{{::$ctrl.i18n.altTitle}}" ng-bind="var"></h3>
+    </a>
+    <h3 i18n code="{{::$ctrl.i18n.altTitle}}" ng-bind="var" ng-if="!$ctrl.item.link"></h3>
+    <div i18n code="{{::$ctrl.i18n.body}}" editor="full" ng-bind-html="var|trust"></div>
+</div>

@@ -1,0 +1,24 @@
+<bin-blog count="6">
+    <div class="container">
+        <app-section-title></app-section-title>
+        <bin-blog-previews>
+            <div class="text-center">
+                <bin-blog-add-article-button></bin-blog-add-article-button>
+            </div>
+            <div class="row">
+                <bin-cols index="$index" cols="sm-6 md-4" length="searchCtrl.results.length" center="true"
+                          ng-repeat="item in searchCtrl.results track by item.id">
+                    <bin-catalog-item item="item"
+                                      template-url="partials/bin-catalog-item/blog-item-preview.html"></bin-catalog-item>
+                </bin-cols>
+            </div>
+            <div class="row" ng-if="searchCtrl.hasMoreResults">
+                <div class="col-xs-12 text-center">
+                    <a bin-href="/blog" class="btn btn-primary" i18n code="catalog.view.more.button" read-only>
+                        <span ng-bind="::var"></span> <i class="fa fa-chevron-right fa-fw"></i>
+                    </a>
+                </div>
+            </div>
+        </bin-blog-previews>
+    </div>
+</bin-blog>

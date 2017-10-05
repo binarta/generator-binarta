@@ -1,0 +1,12 @@
+<div class="card catalog-item">
+    <div class="thumbnail">
+        <figure>
+            <a bin-href="{{::$ctrl.itemPath}}"
+               bin-background-image="{{::$ctrl.image.hero}}" read-only ng-if="::$ctrl.image.hero"></a>
+        </figure>
+    </div>
+    <a bin-href="{{::$ctrl.itemPath}}">
+        <h4 i18n code="{{::$ctrl.i18n.title}}" read-only ng-bind="::var"></h4>
+    </a>
+    <bin-price catalog-item="$ctrl.item" read-only ng-if="::$ctrl.item.price"></bin-price>
+</div>

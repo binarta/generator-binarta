@@ -1,0 +1,10 @@
+{
+  "namespace": "<%= namespace %>",
+  "applicationUrl": "/",
+  "cdnUrl": "http://<%= namespace %>.app.binarta.com/image/<%= namespace %>/",
+  "binartaUrl": "http://<%= namespace %>.app.binarta.com/",
+  "socketUrl": "http://<%= namespace %>.app.binarta.com/ws/",
+  "analytics": false,
+  "subscription": "<%= subscription %>",
+  "defaultLocaleFromMetadata": "en"
+}

@@ -2,9 +2,9 @@
 <!--[if lte IE 9 ]>
 <html> <![endif]-->
 <!--[if (gt IE 9)|!(IE)]><!-->
-<html ng-app="<%= namespace %>"><!--<![endif]-->
+<html ng-app="app"><!--<![endif]-->
 <head prefix="og: http://ogp.me/ns#">
-  <base href="<%%print('${applicationUrl}')%>">
+  <base href="<%print('${applicationUrl}')%>">
   <meta property="og:type" content="website">
   <@page_author></@page_author>
   <@page_title></@page_title>
@@ -15,11 +15,11 @@
   <meta name="fragment" content="!">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=no"/>
-  <meta name="robots" content="<%%print('${robots}')%>">
+  <meta name="robots" content="<%print('${robots}')%>">
   <meta ng-if="unlocalizedPath == '/404'" name="prerender-status-code" content="404">
   <script>
     window.prerenderReady = false;
-    <%%if(debugInfoEnabled) {%>window.debugInfoEnabled = true;<%%}%>
+    <%if(debugInfoEnabled) {%>window.debugInfoEnabled = true;<%}%>
   </script>
   <@link rel="stylesheet" type="text/css" href="${stylesUrl}?${version}"></@link>
   <!--[if (gt IE 9)|!(IE)]><!-->
@@ -31,9 +31,10 @@
 </head>
 <body class="notifications" editmode="{{editing}}">
 <!--[if (gt IE 9)|!(IE)]><!-->
-<main-navbar></main-navbar>
-<div ng-view></div>
-<main-footer></main-footer>
+<app-header></app-header>
+<div ng-view autoscroll="true"></div>
+<app-footer></app-footer>
+<bin-scroll-to-top to="app-header"></bin-scroll-to-top>
 <!--<![endif]-->
 
 <div ng-if="::false">

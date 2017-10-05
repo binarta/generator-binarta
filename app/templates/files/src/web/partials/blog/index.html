@@ -1,26 +1,29 @@
-<div class="container">
+<bin-section id="blog">
     <bin-blog>
-        <div class="row">
-            <div class="col-xs-12 col-sm-8 col-sm-offset-2">
-                <bin-blog-drafts></bin-blog-drafts>
-            </div>
-        </div>
-
-        <bin-blog-previews>
+        <div class="container">
+            <app-section-title></app-section-title>
             <div class="row">
                 <div class="col-xs-12 col-sm-8 col-sm-offset-2">
+                    <bin-blog-drafts></bin-blog-drafts>
+                </div>
+            </div>
+            <bin-blog-previews>
+                <div class="text-center">
                     <bin-blog-add-article-button></bin-blog-add-article-button>
                 </div>
-            </div>
-
-            <ng-include src="'bin-blog-previews.html'"></ng-include>
-
-            <div class="row">
-                <div class="col-xs-12 col-sm-8"
-                     ng-class="searchCtrl.results.length > 0 ? 'col-sm-offset-4' : 'col-sm-offset-2'">
-                    <ng-include src="'search-for-more.html'"></ng-include>
+                <div class="row">
+                    <bin-cols index="$index" cols="sm-6 md-4" length="searchCtrl.results.length"
+                              ng-repeat="item in searchCtrl.results track by item.id">
+                        <bin-catalog-item item="item"
+                                          template-url="partials/bin-catalog-item/blog-item-preview.html"></bin-catalog-item>
+                    </bin-cols>
                 </div>
-            </div>
-        </bin-blog-previews>
+                <div class="row" ng-if="searchCtrl.hasMoreResults">
+                    <div class="col-xs-12">
+                        <ng-include src="'search-for-more.html'"></ng-include>
+                    </div>
+                </div>
+            </bin-blog-previews>
+        </div>
     </bin-blog>
-</div>
+</bin-section>

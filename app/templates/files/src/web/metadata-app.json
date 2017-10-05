@@ -1,21 +1,28 @@
 {
   "msgs":{
     "en":{
-      "nav.home":"home",
-      "nav.blog":"blog",
-      "nav.contact":"contact",
-      "nav.conditions":"Conditions",
+      "navigation.label.home":"home",
+      "navigation.label.features":"features",
+      "navigation.label.about":"about",
+      "navigation.label.products":"products",
+      "navigation.label.services":"services",
+      "navigation.label.blog":"blog",
+      "navigation.label.contact":"contact",
 
-      "contact.form.name":"Name",
-      "contact.form.email":"Email",
-      "contact.form.subject":"Subject",
-      "contact.form.message":"Message",
-      "contact.form.submit":"Send",
-      "contact.address":"My address, number, 3000 Leuven",
-      "contact.phone":"012 34 56 78",
+      "features.title": "Features",
+      "about.title": "About",
+      "products.title": "Products",
+      "services.title": "Services",
+      "blog.title": "Blog",
+      "contact.title": "Contact",
+      "conditions.title":"Conditions",
+      "404.title": "Page not found",
 
-      "toc.title":"Conditions",
-      "toc.body":"Contact us for information about our terms & conditions."
+      "hero.body": "<h1>Binarta starter template</h1><p>This is a very basic template to help you create a new Binarta app very quickly.</p><p>Good luck with your new project!</p>",
+      "about.body": "<p>Tousled chambray selfies celiac flannel wolf. Shaman paleo put a bird on it, direct trade bitters subway tile four loko. 90's scenester cronut kale chips vegan pour-over 8-bit adaptogen meh vinyl bespoke skateboard air plant messenger bag yr.</p>",
+      "conditions.body":"<p>Contact us for information about our terms & conditions.</p>",
+      "404.body": "The page you are looking for doesn't seem to exist.",
+      "404.cta": "Go to home"
     }
   }
 }

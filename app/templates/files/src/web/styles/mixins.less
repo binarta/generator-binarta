@@ -1,0 +1,13 @@
+.maintain-aspect-ratio-of(@w, @h) {
+  padding-bottom: (100% * @h)/@w;
+  position: relative;
+  height: 0;
+
+  > * {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
