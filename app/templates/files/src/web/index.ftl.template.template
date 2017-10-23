@@ -35,6 +35,7 @@
 <div ng-view autoscroll="true"></div>
 <app-footer></app-footer>
 <bin-scroll-to-top to="app-header"></bin-scroll-to-top>
+<cookie-permission-granted></cookie-permission-granted>
 <!--<![endif]-->
 
 <div ng-if="::false">
