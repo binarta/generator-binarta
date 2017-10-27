@@ -15,7 +15,59 @@
   "fonts": [
     "bower_components/font-awesome/fonts/*"
   ],
-  "stylesUrl": "styles/app.css",
+  "styleSources": {
+    "libs": {
+      "packaged":true,
+      "sources": [
+        "bower_components/font-awesome/css/font-awesome.css"
+      ]
+    },
+    "app": {
+      "sources": [
+        "bower_components/bootstrap/less/mixins/*.less",
+        "bower_components/bootstrap/less/normalize.less",
+        "bower_components/bootstrap/less/print.less",
+        "bower_components/bootstrap/less/scaffolding.less",
+        "bower_components/bootstrap/less/type.less",
+        "bower_components/bootstrap/less/code.less",
+        "bower_components/bootstrap/less/grid.less",
+        "bower_components/bootstrap/less/tables.less",
+        "bower_components/bootstrap/less/forms.less",
+        "bower_components/bootstrap/less/buttons.less",
+        "bower_components/bootstrap/less/component-animations.less",
+        "bower_components/bootstrap/less/dropdowns.less",
+        "bower_components/bootstrap/less/button-groups.less",
+        "bower_components/bootstrap/less/input-groups.less",
+        "bower_components/bootstrap/less/navs.less",
+        "bower_components/bootstrap/less/navbar.less",
+        "bower_components/bootstrap/less/breadcrumbs.less",
+        "bower_components/bootstrap/less/pagination.less",
+        "bower_components/bootstrap/less/pager.less",
+        "bower_components/bootstrap/less/labels.less",
+        "bower_components/bootstrap/less/badges.less",
+        "bower_components/bootstrap/less/jumbotron.less",
+        "bower_components/bootstrap/less/thumbnails.less",
+        "bower_components/bootstrap/less/alerts.less",
+        "bower_components/bootstrap/less/progress-bars.less",
+        "bower_components/bootstrap/less/media.less",
+        "bower_components/bootstrap/less/list-group.less",
+        "bower_components/bootstrap/less/panels.less",
+        "bower_components/bootstrap/less/responsive-embed.less",
+        "bower_components/bootstrap/less/wells.less",
+        "bower_components/bootstrap/less/close.less",
+        "bower_components/bootstrap/less/modals.less",
+        "bower_components/bootstrap/less/tooltip.less",
+        "bower_components/bootstrap/less/popovers.less",
+        "bower_components/bootstrap/less/carousel.less",
+        "bower_components/bootstrap/less/utilities.less",
+        "bower_components/bootstrap/less/responsive-utilities.less",
+        "bower_components/binarta*/less/bootstrap3/*.less",
+        "bower_components/websters.carousel.angular/less/content-carousel.less",
+        "bower_components/binarta*/less/*.less",
+        "src/web/**/*.less"
+      ]
+    }
+  },
   "javascriptUrl": "scripts/libs.js",
   "sharedAnalytics": false,
   "intercomAppId": "kgcqud7b",

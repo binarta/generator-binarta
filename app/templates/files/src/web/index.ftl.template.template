@@ -21,13 +21,7 @@
     window.prerenderReady = false;
     <%if(debugInfoEnabled) {%>window.debugInfoEnabled = true;<%}%>
   </script>
-  <@link rel="stylesheet" type="text/css" href="${stylesUrl}?${version}"></@link>
-  <!--[if (gt IE 9)|!(IE)]><!-->
-  <@script src="${javascriptUrl}?${version}"></@script>
-  <@script src="scripts/partials.js?${version}"></@script>
-  <@script src="scripts/config.js?${version}"></@script>
-  <@application_profile></@application_profile>
-  <!--<![endif]-->
+  <% Object.keys(styleSources).forEach(function(id) { %><link rel="stylesheet" type="text/css" href="styles/${id}.css?${version}"/><% }) %>
 </head>
 <body class="notifications" editmode="{{editing}}">
 <!--[if (gt IE 9)|!(IE)]><!-->
@@ -36,6 +30,10 @@
 <app-footer></app-footer>
 <bin-scroll-to-top to="app-header"></bin-scroll-to-top>
 <cookie-permission-granted></cookie-permission-granted>
+<@script src="${javascriptUrl}?${version}"></@script>
+<@script src="scripts/partials.js?${version}"></@script>
+<@script src="scripts/config.js?${version}"></@script>
+<@application_profile></@application_profile>
 <!--<![endif]-->
 
 <div ng-if="::false">
