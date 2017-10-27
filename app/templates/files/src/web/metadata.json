@@ -2,5 +2,19 @@
   "pages":["/"],
   "ui": {
     "primaryColor": "#00AABC"
+  },
+  "catalog": {
+    "products": {
+      "recentItems": true
+    },
+    "services": {
+      "recentItems": true
+    },
+    "features": {
+      "capacity": 9
+    },
+    "info": {
+      "capacity": 8
+    }
   }
 }
