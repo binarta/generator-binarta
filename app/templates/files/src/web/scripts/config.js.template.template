@@ -4,7 +4,6 @@ angular.module('app.config', ['${subscription}.app'])
             namespace:'<%print('${namespace}')%>',
             image:{cache:true},
             autoUpload: true,
-            awsPath:'<%print('${cdnUrl}')%>',
             baseUri:'<%print('${binartaUrl}')%>',
             socketUri: '<%print('${socketUrl}')%>',
             binartaBaseUri: '${binartaBaseUri}',

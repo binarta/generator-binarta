@@ -1,7 +1,6 @@
 {
   "namespace": "<%= namespace %>",
   "applicationUrl": "/",
-  "cdnUrl": "http://<%= namespace %>.app.binarta.demo.thinkerit.be/image/<%= namespace %>/",
   "binartaUrl": "http://<%= namespace %>.app.binarta.demo.thinkerit.be/",
   "socketUrl": "http://<%= namespace %>.app.binarta.demo.thinkerit.be/ws/",
   "analytics": false,
