@@ -1,0 +1,17 @@
+<div class="container">
+    <bin-spotlight type="{{::$ctrl.id}}" cols="sm-4 md-3" center="true"
+                   on-no-items="$ctrl.hideSection()"
+                   on-has-items="$ctrl.showSection()"
+                   item-template-url="'partials/bin-catalog-item/catalog-item-preview.html'">
+        <bin-spotlight-header>
+            <app-section-title></app-section-title>
+        </bin-spotlight-header>
+        <bin-spotlight-footer>
+            <div class="text-center">
+                <a bin-href="{{::$ctrl.path}}" class="btn btn-primary" i18n code="catalog.view.more.button" read-only>
+                    <span ng-bind="::var"></span> <i class="fa fa-chevron-right fa-fw"></i>
+                </a>
+            </div>
+        </bin-spotlight-footer>
+    </bin-spotlight>
+</div>
