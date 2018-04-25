@@ -21,7 +21,7 @@
     window.prerenderReady = false;
     <%if(debugInfoEnabled) {%>window.debugInfoEnabled = true;<%}%>
   </script>
-  <% Object.keys(styleSources).forEach(function(id) { %><link rel="stylesheet" type="text/css" href="styles/${id}.css?${version}"/><% }) %>
+  <% Object.keys(styleSources).forEach(function(id) { %><link rel="stylesheet" type="text/css" href="styles/${id}.css?<%print('${version}')%>"/><% }) %>
 </head>
 <body class="notifications" editmode="{{editing}}">
 <!--[if (gt IE 9)|!(IE)]><!-->
